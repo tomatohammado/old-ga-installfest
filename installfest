@@ -1,0 +1,56 @@
+# General Assembly Installfest
+# Source https://github.com/maikelnabil/installfest
+
+# Adding some references to bash_profile
+echo "Ignore the following error messages!"                               # needs update
+echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.bash_profile
+echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
+echo 'export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin' >> ~/.bash_profile
+echo 'source ~/.profile' >> ~/.bash_profile
+
+# General Messages
+alias bar="echo '*****************************************'"
+alias m-start="echo 'Starting Installfest!'"
+alias m-final="echo 'Done! Thanks a lot for your patience!'"
+alias reload_bash="source ~/.bash_profile"
+
+# homebrew, rbenv, node, mongodb, heroku, git
+alias m-brew="echo 'Installing Brew & Brew Packages!'"
+alias i-brew1='ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" '
+alias i-brew2="brew update && brew upgrade && brew install rbenv node mongodb heroku git libpq"
+alias install-brew="m-brew; i-brew1; i-brew2; bar"
+
+# ruby, ruby_gems, ruby_bundler
+alias m-ruby="echo 'Installing Ruby & RubyGems'"
+alias i-ruby1="rbenv install 2.4.2"
+alias i-ruby2="gem install rubygems-update bundler rails; gem update --system"
+alias install-ruby="m-ruby; reload_bash; i-ruby1; reload_bash; i-ruby2; bar"
+
+# slack, visual studio, atom, postgres
+alias m-cask="echo 'Installing Slack, Atom, Visual Studio, and PostgreSQL'"
+alias i-cask1="brew cask install slack atom visual-studio-code postgres"
+alias i-cask2="gem install pg -- --with-pg-config=/Applications/Postgres.app/Contents/Versions/latest/bin/pg_config"
+alias i-cask3="apm install file-icons linter-js-standard busy-signal intentions linter linter-js-standard linter-ui-default language-babel editorconfig"
+alias install-casks="m-cask; i-cask1; i-cask2; i-cask3; bar"
+
+# git & global_gitignore configuration
+alias m-git="echo 'Configuring Git!'"
+alias i-git1="git config --global push.default simple"
+alias i-git2="git config --global color.ui always"
+alias i-git3="git config --global color.branch.current 'green reverse'"
+alias i-git4="git config --global color.branch.local green"
+alias i-git5="git config --global color.branch.remote yellow"
+alias i-git6="git config --global color.status.added green"
+alias i-git7="git config --global color.status.changed yellow"
+alias i-git8="git config --global color.status.untracked red"
+alias i-git9="git config --global core.editor 'atom --wait'"
+alias i-git10="mv ~/.gitignore_global ~/.gitignore_global.bak"
+alias i-git11="curl -sSL https://raw.githubusercontent.com/maikelnabil/installfest/master/gitignore_global -o ~/.gitignore_global"
+alias i-git12="git config --global core.excludesfile ~/.gitignore_global"
+alias configure-git="m-git; i-git1; i-git2; i-git3; i-git4; i-git5; i-git6; i-git7; i-git8; i-git9; i-git10; i-git11; i-git12; bar"
+
+# Final
+alias installfest="bar; m-start; bar; install-brew; install-ruby; install-casks; configure-git; m-final; bar"
+
+source ~/.bash_profile
+installfest
