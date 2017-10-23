@@ -33,7 +33,7 @@
 
 #### A. Installations
 
-  **To start the Installing process**, Copy This command, paste it in your terminal, and hit Enter!
+  **To start the Installing process**, Copy This command, paste it in your terminal, and hit Enter! Please, watch your terminal and provide your device password, or hit Enter only when asked to.
 
   ```bash
   curl -o ~/.installfest https://raw.githubusercontent.com/maikelnabil/installfest/master/installfest && source ~/.installfest
@@ -103,11 +103,8 @@
   This repository is a recreation of [GA's Installfest](https://git.generalassemb.ly/DC-WDI/Installfest). The original Installfest was written in Ruby. This one instead accomplishes all the tasks in plain Bash commands. Some of the content provided here was copied from the original repository.
 
 
-## Next?
-
-  invite code for garnet?
-
 ## Test Log
 
   - Test #1: Oct 20 - MacBook Air - OS X Yosemite
   - Test #2: Oct 20 - MacBook Air - OS X Yosemite - Duration: 75mins
+  - Test #3: Oct 23 - MacBook Air - OS High Sierra - Duration: 40mins - Ruby section broke.

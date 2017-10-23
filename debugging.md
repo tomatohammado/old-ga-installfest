@@ -1,6 +1,6 @@
 # Testing & Debugging
 
-# Components
+## Components
 
   Installfest is made of 4 commands:
 
@@ -19,7 +19,10 @@
 
 ## Testing
 
-xcode-select      xcode-select --install
+  Currently, there are no tests in Installfest. This shell script installs these apps in all cases, even if the user has older or newer versions of these apps. This provides simplicity and speed to the process. Tests may be added in the future.
+
+  <!-- Command           Exoected Output                       Remedy
+  xcode-select -v   xcode-select version 2349             xcode-select --install -->
 
 
 ## Uninstall node (if not installed via 'brew')

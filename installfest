@@ -2,7 +2,6 @@
 # Source https://github.com/maikelnabil/installfest
 
 # Adding some references to bash_profile
-echo "Ignore the following error messages!"                               # needs update
 echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.bash_profile
 echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
 echo 'export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin' >> ~/.bash_profile
@@ -22,8 +21,8 @@ alias install-brew="m-brew; i-brew1; i-brew2; bar"
 
 # ruby, ruby_gems, ruby_bundler
 alias m-ruby="echo 'Installing Ruby & RubyGems'"
-alias i-ruby1="rbenv install 2.4.2"
-alias i-ruby2="gem install rubygems-update bundler rails; gem update --system"
+alias i-ruby1="rbenv install 2.4.2; rbenv global 2.4.2"
+alias i-ruby2="sudo gem install rubygems-update bundler rails; sudo gem update --system"
 alias install-ruby="m-ruby; reload_bash; i-ruby1; reload_bash; i-ruby2; bar"
 
 # slack, visual studio, atom, postgres
