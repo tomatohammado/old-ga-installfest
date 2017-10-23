@@ -4,7 +4,7 @@
 
   Here at General Assembly, we use Installfest to install a group of applications which we consider essential for any software developer to have. We use these applications regularly in our classes, and it's essential for all our students to have them.
 
-  Installfest takes 1 hour in average. It might take longer if your CPU or internet connection are slow. Make sure that your device is plugged to power supply.
+  Installfest takes 25 minutes in average. It might take longer if your CPU or internet connection are slow. Make sure that your device is plugged to power supply.
 
   **NOTE** The instructions below are made for MacOS users. For Linux users, please follow the instructions [here](./installfest_linux.md) instead.
 
@@ -96,15 +96,3 @@
 ## Congratulations
 
   You have installed the basic applications to use as a developer, and you are ready for DC WDI. We are looking forward to working with you in the next weeks!
-
-
-## Acknowledgment
-
-  This repository is a recreation of [GA's Installfest](https://git.generalassemb.ly/DC-WDI/Installfest). The original Installfest was written in Ruby. This one instead accomplishes all the tasks in plain Bash commands. Some of the content provided here was copied from the original repository.
-
-
-## Test Log
-
-  - Test #1: Oct 20 - MacBook Air - OS X Yosemite
-  - Test #2: Oct 20 - MacBook Air - OS X Yosemite - Duration: 75mins
-  - Test #3: Oct 23 - MacBook Air - OS High Sierra - Duration: 40mins - Ruby section broke.
