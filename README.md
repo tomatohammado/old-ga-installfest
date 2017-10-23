@@ -36,7 +36,7 @@
   **To start the Installing process**, Copy This command, paste it in your terminal, and hit Enter! Please, watch your terminal and provide your device password, or hit Enter only when asked to.
 
   ```bash
-  curl -o ~/.installfest https://raw.githubusercontent.com/maikelnabil/installfest/master/installfest && source ~/.installfest
+  curl -o ~/.installfest https://raw.githubusercontent.com/ga-dc/installfest-bash/master/installfest && source ~/.installfest
 
   ```
 
