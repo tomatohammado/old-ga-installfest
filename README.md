@@ -4,7 +4,7 @@
 
   Here at General Assembly, we use Installfest to install a group of applications which we consider essential for any software developer to have. We use these applications regularly in our classes, and it's essential for all our students to have them.
 
-  Installfest takes 25 minutes in average. It might take longer if your CPU or internet connection are slow. Make sure that your device is plugged to power supply.
+  Installfest takes between 25 minutes to 1 hour. It might take longer if your CPU or internet connection are slow. Make sure that your device is plugged into a power supply.
 
   **NOTE** The instructions below are made for MacOS users. For Linux users, please follow the instructions [here](./installfest_linux.md) instead.
 
