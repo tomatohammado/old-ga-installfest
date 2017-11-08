@@ -1,5 +1,5 @@
 # General Assembly Installfest
-# Source https://github.com/ga-dc/installfest-bash
+# Source https://git.generalassemb.ly/DC-WDI/installfest-bash
 
 # Adding some references to bash_profile
 echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.bash_profile
@@ -44,7 +44,7 @@ alias i-git7="git config --global color.status.changed yellow"
 alias i-git8="git config --global color.status.untracked red"
 alias i-git9="git config --global core.editor 'atom --wait'"
 alias i-git10="mv ~/.gitignore_global ~/.gitignore_global.bak"
-alias i-git11="curl -sSL https://raw.githubusercontent.com/ga-dc/installfest-bash/master/gitignore_global -o ~/.gitignore_global"
+alias i-git11="curl -sSL https://git.generalassemb.ly/raw/DC-WDI/installfest-bash/master/gitignore_global -o ~/.gitignore_global"
 alias i-git12="git config --global core.excludesfile ~/.gitignore_global"
 alias configure-git="m-git; i-git1; i-git2; i-git3; i-git4; i-git5; i-git6; i-git7; i-git8; i-git9; i-git10; i-git11; i-git12; bar"
 
