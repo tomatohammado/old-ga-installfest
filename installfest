@@ -21,8 +21,8 @@ alias install-brew="m-brew; i-brew1; i-brew2; bar"
 
 # ruby, ruby_gems, ruby_bundler
 alias m-ruby="echo 'Installing Ruby & RubyGems'"
-alias i-ruby1="rbenv install 2.4.2; rbenv global 2.4.2"
-alias i-ruby2="sudo gem install rubygems-update bundler rails bcrypt bindex byebug ffi puma; sudo gem update --system"
+alias i-ruby1="rbenv install 2.4.2; rbenv init; rbenv global 2.4.2; reload_bash"
+alias i-ruby2="sudo gem install rubygems-update bundler; sudo gem update --system"
 alias install-ruby="m-ruby; reload_bash; i-ruby1; reload_bash; i-ruby2; bar"
 
 # slack, visual studio, atom, postgres
@@ -31,7 +31,7 @@ alias i-cask1="brew cask install slack"
 alias i-cask2="brew cask install atom"
 alias i-cask3="brew cask install visual-studio-code"
 alias i-cask4="brew cask install postgres"
-alias i-cask5="sudo gem install pg -- --with-pg-config=/Applications/Postgres.app/Contents/Versions/latest/bin/pg_config"
+alias i-cask5="sudo gem install pkg-config rails bcrypt bindex byebug ffi puma; sudo gem install pg -- --with-pg-config=/Applications/Postgres.app/Contents/Versions/latest/bin/pg_config; reload_bash"
 alias i-cask6="apm install file-icons linter-js-standard busy-signal intentions linter linter-js-standard linter-ui-default language-babel editorconfig"
 alias i-cask7="code --install-extension chenxsan.vscode-standardjs"
 alias install-casks="m-cask; i-cask1; i-cask2; i-cask3; i-cask4; i-cask5; i-cask6; i-cask7; bar"
