@@ -1,30 +1,5 @@
 # Testing & Debugging
 
-## Components
-
-  Installfest is made of 4 commands:
-
-  1. `$ install-brew`: Installs Xcode CLI Tools, Homebrew, rbenv, Node, MongoDB, Heroku CLI, and Git.
-
-  2. `$ install-ruby`: Installs Ruby 2.4.2, RubyGems, Bundler, and Rails.
-
-  3. `$ install-casks`: Installs Slack, Atom, Visual Studio, and PostgreSQL.
-
-  4. `$ configure-git`: Adds general Git configuration.
-
-  `$ installfest` runs all of them in order.
-
-  **NOTE** These commands aren't embedded in the bash profile. You need to run `$ source ~/.installfest` first, for bash to recognize them.
-
-
-## Testing
-
-  Currently, there are no tests in Installfest. This shell script installs these apps in all cases, even if the user has older or newer versions of these apps (with the exception of casks). This provides simplicity and speed to the process. Tests may be added in the future.
-
-  <!-- Command           Exoected Output                       Remedy
-  xcode-select -v   xcode-select version 2349             xcode-select --install -->
-
-
 ## Uninstall node (if not installed via 'brew')
 
 If you installed node without using 'brew install node', follow these instructions to uninstall that version.
@@ -32,7 +7,7 @@ If you installed node without using 'brew install node', follow these instructio
 1. First, uninstall the files listed in nodejs' Bill of Materials (bom):
 
     $ lsbom -f -l -s -pf /var/db/receipts/org.nodejs.node.pkg.bom | while read f; do  sudo rm /usr/local/${f}; done
-    
+
     $ sudo rm -rf /usr/local/lib/node /usr/local/lib/node_modules /var/db/receipts/org.nodejs.*
 
 
@@ -69,17 +44,3 @@ If you installed node without using 'brew install node', follow these instructio
 10. Finally, ensure you have permissions to "/usr/local/"
 
     $ sudo chown -R `whoami`:staff /usr/local
-
-
-## To Do Next
-
-- Configure MongoDB database
-
-- Add Uninstall Non-Brew Node to the bash script.
-
-- Improve instructions for Linux
-
-
-## Acknowledgment
-
-  This repository is a recreation of [GA's Installfest](https://git.generalassemb.ly/DC-WDI/Installfest). The original Installfest was written in Ruby. This one instead accomplishes all the tasks in plain Bash commands. Some of the content provided here was copied from the original repository.
