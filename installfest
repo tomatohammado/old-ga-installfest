@@ -5,7 +5,7 @@
 echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.bash_profile
 echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
 echo 'export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin' >> ~/.bash_profile
-echo 'export PATH=$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin' >> ~/.bash_profile
+echo 'export PATH=$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin' >> ~/.bash_profile
 
 # General Messages
 alias bar="echo '*****************************************'"
