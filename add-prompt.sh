@@ -1,4 +1,4 @@
-# Run this script by running:   curl -o ~/prompt https://git.generalassemb.ly/raw/DC-WDI/installfest/master/add-prompt.sh && source ~/add-prompt.sh
+# Run this script by running:   curl -o ~/add-prompt.sh https://git.generalassemb.ly/raw/DC-WDI/installfest/master/add-prompt.sh && source ~/add-prompt.sh
 
 curl -o ~/.git-prompt.sh https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
 curl -o ~/.git-completion.bash https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
