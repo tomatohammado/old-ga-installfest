@@ -1,6 +1,4 @@
-# Testing & Debugging
-
-## Uninstall node (if not installed via 'brew')
+# Uninstall Node (if not installed via 'brew')
 
 If you installed node without using 'brew install node', follow these instructions to uninstall that version.
 

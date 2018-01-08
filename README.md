@@ -31,7 +31,11 @@
 
 ## Instructions
 
-#### A. Installations
+#### A. Instal MacOS High Sierra
+
+  If you haven't already, please install [MacOS High Sierra](https://itunes.apple.com/us/app/macos-high-sierra/id1246284741?mt=12&l=en-us&ls=1). It's the latest release of MacOS, and it's significantly faster than MacOS Yosemite and MacOS Sierra.
+
+#### B. Installations
 
   **To start the Installing process**, Copy This command, paste it in your terminal, and hit Enter! Please, watch your terminal and provide your device password, or hit Enter only when asked to.
 
@@ -40,7 +44,7 @@
 
   ```
 
-#### B. GitHub
+#### C. GitHub
 
   If you don't have a github account, go to https://github.com and create an account.
 
@@ -60,11 +64,11 @@
   echo "export GITHUB_USERNAME='YOUR GITHUB USERNAME'" >> ~/.bash_profile
   ```
 
-#### C. GitHub Enterprise
+#### D. GitHub Enterprise
 
   You will need to create a GitHub Enterprise account as well. Go to https://git.generalassemb.ly/ and create an account. We will use this account as well throughout our classes. You should use the same name, username, profile image, and email you have used before in creating your normal GitHub account.
 
-#### D. Git Configuration
+#### E. Git Configuration
 
 1. Personalize git
 
@@ -86,11 +90,15 @@
   git config --global user.email "THE_EMAIL_YOU_USE_FOR_GITHUB@EMAIL.COM"
   ```
 
-#### E. Authorize WDI
+#### F. Authorize WDI
 
   1. Go to [Garnet](https://garnet.wdidc.org/github/authorize?invite_code=e13f772348bdf0bb39fc2cc88cdd8b90)
 
   2. Click "Authorize Application" to allow GA to access to your public information.
+
+#### G. Add GitHub SSH Keys
+
+  [Follow these instructions](./git-ssh.md) to add GitHub SSH keys to your local machine!
 
 
 ## Congratulations
