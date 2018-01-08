@@ -40,6 +40,13 @@ alias i-cask8="code --install-extension chenxsan.vscode-standardjs"
 alias i-cask9="npm install -g trash-cli standard"
 alias install-casks="m-cask; i-cask1; i-cask2; i-cask3; i-cask4; i-cask5; i-cask6; i-cask7; i-cask8; i-cask9; bar"
 
+# pip
+alias m-pip="echo 'Installing pip Packages!' "
+alias i-pip1="sudo easy_install pip"
+alias i-pip2="curl -o ~/Desktop/get-pip.py https://bootstrap.pypa.io/get-pip.py; python3 ~/Desktop/get-pip.py; rm ~/Desktop/get-pip.py"
+alias i-pip3="pip install ipython virtualenv; pip3 install ipython virtualenv"
+alias install-pip="m-pip; i-pip1; i-pip2; i-pip3; separator"
+
 # git & global_gitignore configuration
 alias m-git="echo 'Configuring Git!'"
 alias i-git1="git config --global push.default simple"
@@ -69,7 +76,7 @@ echo 'PS1="\[\e[33m\]  \d \t \w$git_prompt\n\[\e[m\]\$ "' >> ~/.bash_profile
 source ~/.bash_profile
 
 # Final
-alias installfest="bar; m-start; bar; install-brew; install-ruby; install-casks; configure-git; m-final; bar"
+alias installfest="bar; m-start; bar; install-brew; install-ruby; install-casks; install-pip; configure-git; m-final; bar"
 
 source ~/.bash_profile
 installfest
