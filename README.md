@@ -31,9 +31,9 @@
 
 ## Instructions
 
-#### A. Instal MacOS High Sierra
+#### A. Install MacOS High Sierra
 
-  If you haven't already, please install [MacOS High Sierra](https://itunes.apple.com/us/app/macos-high-sierra/id1246284741?mt=12&l=en-us&ls=1). It's the latest release of MacOS, and it's significantly faster than MacOS Yosemite and MacOS Sierra.
+  If you haven't already, please install [MacOS High Sierra](https://itunes.apple.com/us/app/macos-high-sierra/id1246284741?mt=12&l=en-us&ls=1). It's the latest release of MacOS, and it's significantly faster and more efficient than MacOS Yosemite and MacOS Sierra.
 
 #### B. Installations
 
