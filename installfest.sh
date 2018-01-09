@@ -1,6 +1,19 @@
 # General Assembly DC Installfest
 # Source https://git.generalassemb.ly/DC-WDI/installfest
 
+# Bash Profile
+cat << EOF >> ~/.bash_profile
+# Ruby Environment
+eval "$(rbenv init -)"
+
+#Git CLI Markup
+source /usr/local/etc/bash_completion.d/git-completion.bash #source ~/.git-completion.bash
+source ~/.git-prompt.sh
+GIT_PS1_SHOWDIRTYSTATE=1
+git_prompt="$(__git_ps1)"
+PS1="\[\e[33m\]  \d \t \w$git_prompt\n\[\e[m\]\$ "
+EOF
+
 # General Aliases
 alias bar="echo '****************************************************************'"
 alias m-start="echo 'Starting Installfest!'"
@@ -11,10 +24,9 @@ alias reload_bash="source ~/.bash_profile"
 alias m-brew="echo 'Installing Brew & Brew Packages!'"
 alias i-brew1='rm -rf /usr/local/share/doc/homebrew; ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"; echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.bash_profile; reload_bash'
 alias i-brew2="brew update && brew upgrade && brew install rbenv node mongodb heroku git libpq python3; reload_bash"
-alias i-brew3="brew link --overwrite git; brew link --overwrite node"
-alias i-brew4='echo "eval '$(rbenv init -)'" >> ~/.bash_profile; reload_bash'
-alias i-brew5="sudo mkdir -p /data/db; sudo chown -R $(whoami) /data/db"
-alias install-brew="m-brew; i-brew1; i-brew2; i-brew3; i-brew4; i-brew5; bar"
+alias i-brew3="brew link --overwrite git; brew link --overwrite node; reload_bash"
+alias i-brew4="sudo mkdir -p /data/db; sudo chown -R $(whoami) /data/db"
+alias install-brew="m-brew; i-brew1; i-brew2; i-brew3; i-brew4; bar"
 
 # Ruby, RubyGems, Bundler
 alias m-ruby="echo 'Installing Ruby & RubyGems'"
@@ -58,13 +70,7 @@ alias i-git11="curl -sSL https://git.generalassemb.ly/raw/DC-WDI/installfest/mas
 alias i-git12="git config --global core.excludesfile ~/.gitignore_global"
 alias i-git13="curl -o ~/.git-completion.bash https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash"
 alias i-git14="curl -o ~/.git-prompt.sh https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh"
-alias i-git15='echo "#Git CLI Markup" >> ~/.bash_profile'
-alias i-git16='echo "source /usr/local/etc/bash_completion.d/git-completion.bash #source ~/.git-completion.bash" >> ~/.bash_profile'
-alias i-git17='echo "source ~/.git-prompt.sh" >> ~/.bash_profile'
-alias i-git18='echo "GIT_PS1_SHOWDIRTYSTATE=1" >> ~/.bash_profile'
-alias i-git19='echo "git_prompt='$(__git_ps1)'" >> ~/.bash_profile'
-alias i-git20='echo "PS1='\[\e[33m\]  \d \t \w$git_prompt\n\[\e[m\]\$ '" >> ~/.bash_profile'
-alias configure-git="m-git; i-git1; i-git2; i-git3; i-git4; i-git5; i-git6; i-git7; i-git8; i-git9; i-git10; i-git11; i-git12; i-git13; i-git14; i-git15; i-git16; i-git17; i-git18; i-git19; i-git20; reload_bash; bar"
+alias configure-git="m-git; i-git1; i-git2; i-git3; i-git4; i-git5; i-git6; i-git7; i-git8; i-git9; i-git10; i-git11; i-git12; i-git13; i-git14; reload_bash; bar"
 
 # Final
 alias installfest="bar; m-start; bar; install-brew; install-ruby; install-cask; install-pip; configure-git; m-final; bar"
