@@ -2,16 +2,7 @@
 # Source https://git.generalassemb.ly/DC-WDI/installfest
 
 # Bash Profile
-echo '#Brew Path' >> ~/.bash_profile
-echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.bash_profile
-echo '#Git CLI Markup' >> ~/.bash_profile
-echo 'source /usr/local/etc/bash_completion.d/git-completion.bash #source ~/.git-completion.bash' >> ~/.bash_profile
-echo 'source ~/.git-prompt.sh' >> ~/.bash_profile
-echo 'GIT_PS1_SHOWDIRTYSTATE=1' >> ~/.bash_profile
-echo "git_prompt='$(__git_ps1)'" >> ~/.bash_profile
-echo 'PS1="\[\e[33m\]  \d \t \w$git_prompt\n\[\e[m\]\$ "' >> ~/.bash_profile
-echo '# Ruby Environment' >> ~/.bash_profile
-echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
+curl https://git.generalassemb.ly/raw/DC-WDI/installfest/master/bash_profile.sh >> ~/.bash_profile
 
 # General Aliases
 alias bar="echo '****************************************************************'"
@@ -50,7 +41,7 @@ alias install-cask="m-cask; i-cask1; i-cask2; i-cask3; i-cask4; i-cask5; i-cask6
 alias m-pip="echo 'Installing pip Packages!' "
 alias i-pip1="sudo easy_install pip"
 alias i-pip2="curl -o ~/Desktop/get-pip.py https://bootstrap.pypa.io/get-pip.py; python3 ~/Desktop/get-pip.py; rm ~/Desktop/get-pip.py"
-alias i-pip3="pip install ipython virtualenv; pip3 install ipython virtualenv"
+alias i-pip3="pip3 install ipython virtualenv"
 alias install-pip="m-pip; i-pip1; i-pip2; i-pip3; separator"
 
 # git, git prompt, and global_gitignore configuration
@@ -67,9 +58,8 @@ alias i-git9="git config --global core.editor 'atom --wait'"
 alias i-git10="mv ~/.gitignore_global ~/.gitignore_global.bak"
 alias i-git11="curl -sSL https://git.generalassemb.ly/raw/DC-WDI/installfest/master/gitignore_global -o ~/.gitignore_global"
 alias i-git12="git config --global core.excludesfile ~/.gitignore_global"
-alias i-git13="curl -o ~/.git-completion.bash https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash"
-alias i-git14="curl -o ~/.git-prompt.sh https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh"
-alias configure-git="m-git; i-git1; i-git2; i-git3; i-git4; i-git5; i-git6; i-git7; i-git8; i-git9; i-git10; i-git11; i-git12; i-git13; i-git14; reload_bash; bar"
+alias i-git13="curl -o ~/.git-prompt.sh https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh"
+alias configure-git="m-git; i-git1; i-git2; i-git3; i-git4; i-git5; i-git6; i-git7; i-git8; i-git9; i-git10; i-git11; i-git12; i-git13; i-git13; reload_bash; bar"
 
 # Final
 alias installfest="bar; m-start; bar; install-brew; install-ruby; install-cask; install-pip; configure-git; m-final; bar"
