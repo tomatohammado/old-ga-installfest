@@ -2,15 +2,16 @@
 # Source https://git.generalassemb.ly/DC-WDI/installfest
 
 # Bash Profile
+echo '#Brew Path' >> ~/.bash_profile
 echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.bash_profile
-echo '# Ruby Environment' >> ~/.bash_profile
-echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
 echo '#Git CLI Markup' >> ~/.bash_profile
 echo 'source /usr/local/etc/bash_completion.d/git-completion.bash #source ~/.git-completion.bash' >> ~/.bash_profile
 echo 'source ~/.git-prompt.sh' >> ~/.bash_profile
 echo 'GIT_PS1_SHOWDIRTYSTATE=1' >> ~/.bash_profile
-echo 'git_prompt="$(__git_ps1)"' >> ~/.bash_profile
+echo "git_prompt='$(__git_ps1)'" >> ~/.bash_profile
 echo 'PS1="\[\e[33m\]  \d \t \w$git_prompt\n\[\e[m\]\$ "' >> ~/.bash_profile
+echo '# Ruby Environment' >> ~/.bash_profile
+echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
 
 # General Aliases
 alias bar="echo '****************************************************************'"
@@ -42,7 +43,7 @@ alias i-cask5="brew cask install google-chrome"
 alias i-cask6="sudo gem install pkg-config rails bcrypt bindex byebug ffi puma; sudo gem install pg -- --with-pg-config=/Applications/Postgres.app/Contents/Versions/latest/bin/pg_config; reload_bash"
 alias i-cask7="apm install file-icons linter-js-standard busy-signal intentions linter linter-js-standard linter-ui-default language-babel editorconfig platformio-ide-terminal"
 alias i-cask8="code --install-extension chenxsan.vscode-standardjs"
-alias i-cask9="npm install -g trash-cli standard"
+alias i-cask9="npm install -g trash-cli standard nodemon"
 alias install-cask="m-cask; i-cask1; i-cask2; i-cask3; i-cask4; i-cask5; i-cask6; i-cask7; i-cask8; i-cask9; bar"
 
 # Pip
