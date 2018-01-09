@@ -2,17 +2,15 @@
 # Source https://git.generalassemb.ly/DC-WDI/installfest
 
 # Bash Profile
-cat << EOF >> ~/.bash_profile
-# Ruby Environment
-eval "$(rbenv init -)"
-
-#Git CLI Markup
-source /usr/local/etc/bash_completion.d/git-completion.bash #source ~/.git-completion.bash
-source ~/.git-prompt.sh
-GIT_PS1_SHOWDIRTYSTATE=1
-git_prompt="$(__git_ps1)"
-PS1="\[\e[33m\]  \d \t \w$git_prompt\n\[\e[m\]\$ "
-EOF
+echo 'export PATH="/usr/local/bin:$PATH"\n' >> ~/.bash_profile
+echo '# Ruby Environment' >> ~/.bash_profile
+echo 'eval "$(rbenv init -)"\n' >> ~/.bash_profile
+echo '#Git CLI Markup' >> ~/.bash_profile
+echo 'source /usr/local/etc/bash_completion.d/git-completion.bash #source ~/.git-completion.bash' >> ~/.bash_profile
+echo 'source ~/.git-prompt.sh' >> ~/.bash_profile
+echo 'GIT_PS1_SHOWDIRTYSTATE=1' >> ~/.bash_profile
+echo 'git_prompt="$(__git_ps1)"' >> ~/.bash_profile
+echo 'PS1="\[\e[33m\]  \d \t \w$git_prompt\n\[\e[m\]\$ "' >> ~/.bash_profile
 
 # General Aliases
 alias bar="echo '****************************************************************'"
