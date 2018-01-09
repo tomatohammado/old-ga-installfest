@@ -28,7 +28,7 @@ alias install-brew="m-brew; i-brew1; i-brew2; i-brew3; i-brew4; bar"
 
 # Ruby, RubyGems, Bundler
 alias m-ruby="echo 'Installing Ruby & RubyGems'"
-alias i-ruby1="rbenv install 2.4.2; rbenv init; rbenv global 2.4.2; reload_bash"
+alias i-ruby1="rbenv install 2.5.0; rbenv init; rbenv global 2.5.0; reload_bash"
 alias i-ruby2="sudo gem install rubygems-update bundler; sudo gem update --system"
 alias install-ruby="m-ruby; reload_bash; i-ruby1; reload_bash; i-ruby2; bar"
 
