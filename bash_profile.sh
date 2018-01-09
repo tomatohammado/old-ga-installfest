@@ -1,4 +1,4 @@
-#Brew Path
+# HomeBrew Path
 export PATH="/usr/local/bin:$PATH"
 
 # Git CLI Markup
