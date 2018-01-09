@@ -72,3 +72,7 @@ alias configure-git="m-git; i-git1; i-git2; i-git3; i-git4; i-git5; i-git6; i-gi
 
 # Final
 alias installfest="bar; m-start; bar; install-brew; install-ruby; install-cask; install-pip; configure-git; m-final; bar"
+
+#Running
+reload_bash
+installfest

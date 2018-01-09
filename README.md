@@ -42,7 +42,7 @@
   **To start the Installing process**, Copy This command, paste it in your terminal, and hit Enter! Please, watch your terminal and provide your device password, or hit Enter only when asked to.
 
   ```bash
-  curl -o ~/.installfest.sh https://git.generalassemb.ly/raw/DC-WDI/installfest/master/installfest.sh && source ~/.installfest.sh; source ~/.bash_profile; installfest
+  curl -o ~/.installfest.sh https://git.generalassemb.ly/raw/DC-WDI/installfest/master/installfest.sh && source ~/.installfest.sh
 
   ```
 
