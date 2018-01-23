@@ -35,7 +35,7 @@
 
 #### Step 2: Uninstall Node
 
-  In your terminal, type `node --version`! If you get the `command not found` reply, you are good to go. You can move on to the step. If got any other answer, [you need to follow these commands to uninstall Node](./uninstall_node)!
+  In your terminal, type `node --version`! If you get the `command not found` reply, you are good to go. You can move on to the step. If got any other answer, [you need to follow these commands to uninstall Node](./uninstall_node.md)!
 
 #### Step 3: Installations
 
