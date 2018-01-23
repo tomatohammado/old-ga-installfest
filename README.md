@@ -94,7 +94,7 @@
 
 #### Step 7: Authorize WDI
 
-  1. Go to [Garnet](https://garnet.wdidc.org/github/authorize?invite_code=e13f772348bdf0bb39fc2cc88cdd8b90)
+  1. Go to [Garnet](https://garnet.wdidc.org/github/authorize?invite_code=d5bbe4a25f36fce7b4ad210337b4a92c)
 
   2. Click "Authorize Application" to allow GA to access to your public information.
 
