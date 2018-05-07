@@ -19,15 +19,15 @@ alias i-brew4="sudo mkdir -p /data/db; sudo chown -R $(whoami) /data/db"
 alias install-brew="m-brew; i-brew1; i-brew2; i-brew3; i-brew4; bar"
 
 # Ruby, RubyGems, Bundler
-alias m-ruby="echo 'Installing Ruby & RubyGems'"
-alias i-ruby1="rbenv install 2.5.0; rbenv init; rbenv global 2.5.0; reload_bash"
-alias i-ruby2="sudo gem install rubygems-update bundler; sudo gem update --system"
-alias install-ruby="m-ruby; reload_bash; i-ruby1; reload_bash; i-ruby2; bar"
+# alias m-ruby="echo 'Installing Ruby & RubyGems'"
+# alias i-ruby1="rbenv install 2.5.0; rbenv init; rbenv global 2.5.0; reload_bash"
+# alias i-ruby2="sudo gem install rubygems-update bundler; sudo gem update --system"
+# alias install-ruby="m-ruby; reload_bash; i-ruby1; reload_bash; i-ruby2; bar"
 
 # Slack, Atom, Visual Studio Code, PostgreSQL, Chrome, Rails
 alias m-cask="echo 'Installing Slack, Atom, Visual Studio, and PostgreSQL'"
 alias i-cask1="brew cask install slack"
-alias i-cask2="brew cask install atom"
+# alias i-cask2="brew cask install atom"
 alias i-cask3="brew cask install visual-studio-code"
 alias i-cask4="brew cask install postgres"
 alias i-cask5="brew cask install google-chrome"
@@ -35,7 +35,7 @@ alias i-cask6="sudo gem install pkg-config rails bcrypt bindex byebug ffi puma; 
 alias i-cask7="apm install file-icons linter-js-standard busy-signal intentions linter linter-js-standard linter-ui-default language-babel editorconfig platformio-ide-terminal"
 alias i-cask8="code --install-extension chenxsan.vscode-standardjs"
 alias i-cask9="npm install -g trash-cli standard nodemon"
-alias install-cask="m-cask; i-cask1; i-cask2; i-cask3; i-cask4; i-cask5; i-cask6; i-cask7; i-cask8; i-cask9; bar"
+alias install-cask="m-cask; i-cask1; i-cask3; i-cask4; i-cask5; i-cask6; i-cask7; i-cask8; i-cask9; bar"
 
 # Pip
 alias m-pip="echo 'Installing pip Packages!' "
@@ -62,7 +62,7 @@ alias i-git13="curl -o ~/.git-prompt.sh https://raw.githubusercontent.com/git/gi
 alias configure-git="m-git; i-git1; i-git2; i-git3; i-git4; i-git5; i-git6; i-git7; i-git8; i-git9; i-git10; i-git11; i-git12; i-git13; i-git13; reload_bash; bar"
 
 # Final
-alias installfest="bar; m-start; bar; install-brew; install-ruby; install-cask; install-pip; configure-git; m-final; bar"
+alias installfest="bar; m-start; bar; install-brew; install-cask; install-pip; configure-git; m-final; bar"
 
 #Running
 reload_bash
