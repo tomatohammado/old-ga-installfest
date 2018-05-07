@@ -94,7 +94,7 @@
 
 #### Step 7: Authorize WDI
 
-  1. Go to [Garnet](https://garnet.wdidc.org/github/authorize?invite_code=85a52a8ce6a16bc87868ade8d9ec8660)
+  1. Go to [Garnet](https://ga-garnet-production.herokuapp.com/github/authorize?invite_code=9ed50a0be4f377d83faea7bc34c423d0)
 
   2. Click "Authorize Application" to allow GA to access to your public information.
 
