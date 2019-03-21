@@ -174,23 +174,8 @@ $ ssh -T git@git.generalassemb.ly
 ```
 
 
-## Upstream on a Cloned Repo
-
-![Git Pull Upstream](git06.jpg)
-
-Since we have all already forked and cloned the GA-DC/Curriculum repository onto our local machine - we need a way to be able to update our local copy with any changes being made to the master repository.
-
-One of the ways we can do this is by establishing a link to this remote repository so that we can get all the changes anytime we want.
-
-The convention is to add an `upstream` remote.
-
-This remote is where we can pull from at any time, but do not have permission to push our changes.
-
-Please go back into Github and make sure your profile has your accurate FULL NAME, and a relevant Photo of you.
-Your presence on github is important! Potential employers will visit your profile!
-
 ## Closing
-Go over learning objectives, and make sure everyone's profiles are up to date.
+Go over learning objectives, and make sure your profiles are up to date.
 
 ## Resources
 * [Github guide to configure SSH keys](https://help.github.com/articles/generating-ssh-keys/#step-1-check-for-ssh-keys)
