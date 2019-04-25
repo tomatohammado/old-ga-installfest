@@ -54,6 +54,9 @@ students to have them.
   like something stalled give it a moment. If something didn't work, you'll get
   an error message.
 
+- If the output of the Confirm commands are slightly different from the Expected
+  Output, that is fine as long as they are similar.
+
 ### IF YOU RUN INTO AN ISSUE
 
 1. First, verify that you've typed the given commands **letter for letter**
@@ -144,6 +147,11 @@ Run `echo $PATH` again and confirm `/usr/local/bin` is listed.
 
 # Confirm
 brew --version
+
+# Expected Output
+Homebrew 2.1.1
+Homebrew/homebrew-core (git revision caa74; last commit 2019-04-24)
+Homebrew/homebrew-cask (git revision 4df3cd; last commit 2019-04-25)
 ```
 
 ---
@@ -185,6 +193,8 @@ _Confirm_
 source ./bash_profile
 ```
 
+The terminal should look a little different now!
+
 ---
 
 - [ ] **Uninstall Node (if installed)**
@@ -215,6 +225,9 @@ _Confirm_
 
 ```bash
 command -v nvm
+
+# Expected Output
+nvm
 ```
 
 ---
@@ -226,6 +239,9 @@ nvm install node
 
 # Confirm
 node --version
+
+# Expected Output
+v12.0.0
 ```
 
 ---
@@ -244,6 +260,9 @@ source ~/.bash_profile
 
 # Confirm
 pyenv --version
+
+# Expected Output
+pyenv 1.2.11
 ```
 
 ---
@@ -270,6 +289,9 @@ pyenv global 3.7.3
 # Confirm
 python --version
 
+# Expected Output
+Python 3.7.3
+
 # Nice to have
 pip install ipython
 ```
@@ -283,6 +305,9 @@ pip install --user pipenv
 
 # Confirm
 pipenv --version
+
+# Expected Output
+pipenv, version 2018.11.26
 ```
 
 If pipenv cannot be found, we need to add the directory it was installed to the
@@ -317,6 +342,9 @@ source ~/.bash_profile
 
 # 2/2
 pipenv --version
+
+# Expected Output
+pipenv, version 2018.11.26
 ```
 
 **Remember** to run `source ~/.bash_profile`
@@ -435,6 +463,9 @@ npm list -g --depth=0
 # see initial version of git installed on the system
 git --version
 
+# Expected Output
+git version 2.20.1 (Apple Git-117)
+
 # install latest version
 # 1/2
 brew install git
@@ -444,6 +475,9 @@ source ~/.bash_profile
 
 # Confirm
 git --version
+
+# Expected Output
+git version 2.21.0
 ```
 
 ---
