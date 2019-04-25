@@ -1,46 +1,56 @@
 # Uninstall Node (if not installed via 'brew')
 
-If you installed node without using 'brew install node', follow these instructions to uninstall that version.
+If you installed node without using 'brew install node', follow these
+instructions to uninstall that version.
 
-1. First, uninstall the files listed in nodejs' Bill of Materials (bom):
+1.  First, uninstall the files listed in nodejs' Bill of Materials (bom):
 
-        lsbom -f -l -s -pf /var/db/receipts/org.nodejs.node.pkg.bom | while read f; do  sudo rm /usr/local/${f}; done
+```bash
+lsbom -f -l -s -pf /var/db/receipts/org.nodejs.node.pkg.bom | while read f; do  sudo rm /usr/local/${f}; done
 
-        sudo rm -rf /usr/local/lib/node /usr/local/lib/node_modules /var/db/receipts/org.nodejs.*
+sudo rm -rf /usr/local/lib/node /usr/local/lib/node_modules /var/db/receipts/org.nodejs.*
+```
 
+2.  Go to /usr/local/lib and delete any node and node_modules
 
-2. Go to /usr/local/lib and delete any node and node_modules
+```bash
+cd /usr/local/lib
+sudo rm -rf node*
+```
 
-        cd /usr/local/lib
-        sudo rm -rf node*
+3.  Go to /usr/local/include and delete any node and node_modules directory
 
+```bash
+cd /usr/local/include
+sudo rm -rf node*
+```
 
-3. Go to /usr/local/include and delete any node and node_modules directory
+4.  Go to /usr/local/bin and delete any node executable
 
-        cd /usr/local/include
-        sudo rm -rf node*
+```bash
+cd /usr/local/bin
+sudo rm -rf /usr/local/bin/node
+sudo rm -rf /usr/local/bin/npm
+ls -las
+```
 
-4. Go to /usr/local/bin and delete any node executable
+5.  Remove man docs
 
-        cd /usr/local/bin
-        sudo rm -rf /usr/local/bin/node
-        sudo rm -rf /usr/local/bin/npm
-        ls -las
+`sudo rm -rf /usr/local/share/man/man1/node.1`
 
-5. Remove man docs
+6.  Remove debugging info
 
-        sudo rm -rf /usr/local/share/man/man1/node.1
+`sudo rm -rf /usr/local/lib/dtrace/node.d`
 
-6. Remove debugging info
+7.  Remove from Home dir
 
-        sudo rm -rf /usr/local/lib/dtrace/node.d
+`sudo rm -rf ~/.npm`
 
-8. Remove from Home dir
+8.  Check your Home directory for any "local" or "lib" or "include" folders, and
+    delete any "node" or "node_modules" from there
 
-        sudo rm -rf ~/.npm
+9.  Finally, ensure you have permissions to "/usr/local/"
 
-9. Check your Home directory for any "local" or "lib" or "include" folders, and delete any "node" or "node_modules" from there
+`sudo chown -R`whoami`:staff /usr/local`
 
-10. Finally, ensure you have permissions to "/usr/local/"
-
-        sudo chown -R `whoami`:staff /usr/local
+_Note_: this might not be necessary in current versions of macOS.
