@@ -14,12 +14,10 @@ students to have them.
 - **IMPORTANT: THIS IS AN EXERCISE IN FOLLOWING INSTRUCTIONS**. This guide is
   _not_ a lesson.
 
-  Most of the software that we are installing will be discussed to greater
-  detail later in the course. We are excited to answer questions and talk more
-  about the hows and whys during the course.
-
-  Today, we are simply setting things up so we can hit the ground running from
-  the first day!
+  We will discuss the software that we are installing in greater detail later in
+  the course. We are excited to answer questions and talk more about the hows
+  and whys during the course, but today we are simply setting things up so we
+  are prepared to learn and practice software engineering from the first day!
 
 - The instructions below are made for macOS users. For Linux users, please
   follow the instructions [here](./installfest_linux.md) instead.
@@ -29,9 +27,9 @@ students to have them.
 - We don't recommend typing the commands manually since a single typo can make a
   command malfunction.
 
-  - Use `CMD + C` to copy a command
+  - Use `CMD + C` to copy a command.
 
-  - Use `CMD + V` to paste a command
+  - Use `CMD + V` to paste a command.
 
   Copy and paste **one command at a time**. Each command should be a single
   line, but if your window is narrow some lines may "wrap" and appear as
@@ -42,42 +40,32 @@ students to have them.
 
   When you type it in, Terminal won't give you any visual feedback to indicate
   you're typing things in: you won't get a black dot for each character you
-  typed. That's OK: just type your password and hit enter.
+  typed. That's OK – just type your password and hit enter.
 
-- Terminal is not big on visual feedback - it usually doesn't tell you when
+- Terminal is not big on visual feedback – it usually doesn't tell you when
   something worked.
 
-  No news is good news! If you enter a command and Terminal doesn't say anything
-  about it, it probably worked fine.
+  No news is good news! If you enter a command and Terminal doesn't say, it
+  probably worked fine.
 
   Similarly, some of the commands do not give immediate feedback so if it looks
   like something stalled give it a moment. If something didn't work, you'll get
   an error message.
 
-- If the output of the Confirm commands are slightly different from the Expected
-  Output, that is fine as long as they are similar.
+- Your output could be slightly different from the Example Output. As long as
+  they are similar you are good to move on to the next step.
 
-### IF YOU RUN INTO AN ISSUE
+## If You Run Into an Issue
 
-1. First, verify that you've typed the given commands **letter for letter**
-1. Then, check the board if any changes were made during the installfest
-1. Finally, ask an instructor for help.
+1. First, verify that you've typed the given commands **letter for letter**.
+2. Then, check the board if any changes were made during the installfest.
+3. Finally, ask an instructor for help.
 
-## Instructions
-
-- [ ] **Open Terminal**
-
-Open Terminal by typing "Terminal" into Spotlight (ensure you select the
-Terminal app).
-
-Open Spotlight by clicking the little magnifying glass in the top-right corner
-of your screen, or hitting `CMD + Space`.
-
----
+## Instructions 🚀
 
 - [ ] **Update macOS**
 
-Install the latest release of macOS,
+For our class, you'll need the latest release of macOS,
 [Mojave](https://itunes.apple.com/us/app/macos-mojave/id1398502828?mt=12).
 
 If you already have Mojave but need to run an update, please do that tonight
@@ -88,159 +76,321 @@ first.
 
 ---
 
+- [ ] **Open Terminal**
+
+1. Open Spotlight by clicking the little magnifying glass in the top-right
+   corner of your screen, or hitting `CMD + Space`.
+
+2. Type "Terminal" into the Spotlight text input and select the Terminal app. A
+   new Terminal window should pop up.
+
+**Note:** If you prefer iTerm, use iTerm for anything that references the
+Terminal application. Similarly, use Alfred for anything that references
+Spotlight moving forward.
+
+---
+
 - [ ] **Install Xcode**
 
-In the Terminal, check if Xcode is installed by running:
+1. In the Terminal, check if Xcode is installed.
+
+   _Run:_
+
+   ```bash
+   xcode-select --version
+
+   # Example Output
+   xcode-select version 2354.
+   ```
+
+2. If you do not see a version...
+
+   _Run:_
+
+   ```bash
+   xcode-select --install
+   ```
+
+_Confirm:_
 
 ```bash
 xcode-select --version
-```
-
-If you do not see a version, then run:
-
-```bash
-xcode-select --install
 ```
 
 ---
 
 - [ ] **Create .bash_profile**
 
+**Note:** If you're using zsh, skip to the "Confirm" commands.
+
+_Run:_
+
 ```bash
-# 1/2
 touch ~/.bash_profile
-
-# 2/2
-source ~/.bash_profile
 ```
 
----
-
-- [ ] **Configure \$PATH**
+_Confirm:_
 
 ```bash
-echo $PATH
-```
-
-Make sure `/usr/local/bin` is listed. It is ok if it is between `:` characters.
-
-If not, run:
-
-```bash
-# 1/2
-echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.bash_profile
-
-# 2/2
 source ~/.bash_profile
+# zsh
+source ~/.zshrc
+
+# Example Output
+# Nothing! if you do not get any errors that means the .bash_profile is in good shape.
 ```
-
-_Confirm_
-
-Run `echo $PATH` again and confirm `/usr/local/bin` is listed.
 
 ---
 
 - [ ] **Install Homebrew**
 
-```bash
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+1. Check to see if you have Homebrew installed.
 
-# Confirm
+   _Run:_
+
+   ```bash
+   brew --version
+
+   # Example Output
+   Homebrew 2.1.5
+   Homebrew/homebrew-core (git revision 26177; last commit 2019-06-12)
+   Homebrew/homebrew-cask (git revision 3b2b; last commit 2019-06-13)
+   ```
+
+2. If Homebrew is installed, update it.
+
+   _Run:_
+
+   ```bash
+   brew update; brew upgrade; brew cleanup; brew doctor
+   ```
+
+   If not, install Homebrew.
+
+   _Run:_
+
+   ```bash
+   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+   ```
+
+_Confirm:_
+
+```bash
 brew --version
 
-# Expected Output
-Homebrew 2.1.1
-Homebrew/homebrew-core (git revision caa74; last commit 2019-04-24)
-Homebrew/homebrew-cask (git revision 4df3cd; last commit 2019-04-25)
+# Example Output
+Homebrew 2.1.5
+Homebrew/homebrew-core (git revision 26177; last commit 2019-06-12)
+Homebrew/homebrew-cask (git revision 3b2b; last commit 2019-06-13)
 ```
 
 ---
 
 - [ ] **Install VS Code**
 
+**Note:** If you already have VS Code installed, you can skip this step.
+
+_Run:_
+
 ```bash
 brew cask install visual-studio-code
+```
 
-# Confirm
+_Confirm:_
+
+```bash
 code .
+```
+
+This will open a new window in VS Code – feel free to keep it open as we will be
+using VS Code to edit specific files.
+
+**Troubleshooting:**
+
+1. If you get a `command not found` error, open VS Code manually.
+
+   Anywhere on your computer, press `CMD + Space` to open the Spotlight and type
+   "Visual Studio Code" to open the application.
+
+2. In VS Code, press `SHIFT + CMD + P` to open the Command Palette, and enter...
+
+   `Shell Command: Install 'code' command in PATH`
+
+   VS Code should autocomplete the rest of the command when you enter the first
+   few characters.
+
+3. Back in the terminal...
+
+   _Run:_
+
+   ```bash
+   source ~/.bash_profile
+   # zsh
+   source ~/.zshrc
+   ```
+
+4. Run the "Confirm" command again. Worst case, completely close Terminal
+   (`CMD + Q`) and open a new window.
+
+---
+
+- [ ] **Set the \$PATH**
+
+1. Open your `.bash_profile` or `.zshrc`.
+
+   _Run:_
+
+   ```bash
+   code ~/.bash_profile
+   # zsh
+   code ~/.zshrc
+
+   ```
+
+   Assuming this is the first time you are working with the `.bash_profile`, the
+   file that just opened in VS Code could be entirely empty.
+
+2. Add the following line to the very top of the `.bash_profile` and then save
+   (`CMD + S`).
+
+   _Edit `.bash_profile` or `.zshrc`:_
+
+   ```bash
+   export PATH=/usr/local/bin:$PATH
+   ```
+
+**NOTE:** If you already have code in `.bash_profile`, that's awesome! Just make
+sure there is a line that says `export PATH=<blah blah blah>` because we will
+need to add to it later.
+
+_Confirm:_
+
+```bash
+source ~/.bash_profile
+# zsh
+source ~/.zshrc
+```
+
+---
+
+- [ ] **Add Git Auto-Completion to bash**
+
+**Note:** If you're using zsh, move on to the next step.
+
+In your `.bash_profile`, add this line. You want to keep the
+`export PATH=<blah blah blah>` line near the top so this next line can go right
+under it and save the file (`CMD + S`).
+
+_Edit `.bash_profile`:_
+
+```bash
+source /usr/local/etc/bash_completion.d/git-completion.bash
+```
+
+_Confirm:_
+
+```bash
+source ~/.bash_profile
 ```
 
 ---
 
 - [ ] **Install bash-git-prompt**
 
-```bash
-# 1/2
-brew install bash-git-prompt
+**Note:** If you're using zsh, move on to the next step.
 
-# 2/2
-code ~/.bash_profile
+1. Install bash-git-prompt.
+
+   _Run:_
+
+   ```bash
+   brew install bash-git-prompt
+   ```
+
+2. Add the following near the bottom of the `.bash_profile` and save the file
+   (`CMD + S`).
+
+   _Edit `.bash_profile`:_
+
+   ```bash
+   if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
+     __GIT_PROMPT_DIR=$(brew --prefix)/opt/bash-git-prompt/share
+     GIT_PROMPT_ONLY_IN_REPO=0
+     source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
+   fi
+   ```
+
+_Confirm:_
+
+```bash
+source ~/.bash_profile
 ```
 
-Add the following near the bottom of the `.bash_profile`:
-
-```bash
-if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
-  __GIT_PROMPT_DIR=$(brew --prefix)/opt/bash-git-prompt/share
-  GIT_PROMPT_ONLY_IN_REPO=0
-  source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
-fi
-```
-
-_Confirm_
-
-```bash
-source ./bash_profile
-```
-
-The terminal should look a little different now!
+Terminal should look a little different now. If not, then completely close
+Terminal (`CMD + Q`) and reopen a new window.
 
 ---
 
 - [ ] **Uninstall Node (if installed)**
 
-In the Terminal, run:
+1. Check if node is installed.
 
-```bash
-node --version
-```
+   _Run:_
 
-If you get the `command not found` reply, you are good to go! You can move on to
-the step.
+   ```bash
+   node --version
+   ```
 
-If got any other answer,
-[you need to follow these commands to uninstall Node](./uninstall_node.md)!
+2. If you get the `command not found` reply, you are good to go! You can move on
+   to the step.
+
+   If got any other answer,
+   [follow these steps to uninstall Node](./uninstall_node.md)!
 
 ---
 
 - [ ] **Install NVM**
 
-```bash
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
-```
+**Note:** If you are using zsh via oh-my-zsh, you can instead use the
+[zsh-nvm](https://github.com/lukechilds/zsh-nvm#as-an-oh-my-zsh-custom-plugin)
+plugin. These instructions will work for zsh, however.
 
-Next, completely close out your Terminal window and reopen a new one.
+1. Install nvm.
 
-_Confirm_
+   _Run:_
+
+   ```bash
+   curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+   ```
+
+2. Completely close Terminal (`CMD + Q`) and reopen a new window.
+
+_Confirm:_
 
 ```bash
 command -v nvm
 
-# Expected Output
+# Example Output
 nvm
 ```
 
 ---
 
-- [ ] **Install Node**
+- [ ] **Install the latest version of Node via NVM**
+
+_Run:_
 
 ```bash
 nvm install node
+```
 
+_Confirm:_
+
+```bash
 # Confirm
 node --version
 
-# Expected Output
+# Example Output
 v12.0.0
 ```
 
@@ -248,20 +398,31 @@ v12.0.0
 
 - [ ] **Install Pyenv**
 
+_Run:_
+
 ```bash
 # 1/3
 brew install pyenv
 
 # 2/3
-echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.bash_profile
+# bash
+echo -e '\n# initialize pyenv\nif command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.bash_profile
+# zsh
+echo -e '\n# initialize pyenv\nif command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.zshrc
 
 # 3/3
 source ~/.bash_profile
+# zsh
+source ~/.zshrc
+```
 
+_Confirm:_
+
+```bash
 # Confirm
 pyenv --version
 
-# Expected Output
+# Example Output
 pyenv 1.2.11
 ```
 
@@ -269,30 +430,55 @@ pyenv 1.2.11
 
 - [ ] **Install Python**
 
-Try running:
+1. For the sake of example, we're using Python 3.7.3 - if there is a later
+   stable version it should be OK to use but please ask the instructors if
+   you're unsure.
 
-```bash
-pyenv install 3.7.3
+   _Run:_
+
+   ```bash
+   pyenv install 3.7.3
+   ```
+
+   **Troubleshooting:**
+
+   If you get an error that says `can't decompress data; zlib not available`,
+   then:
+
+   _Run:_
+
+   ```bash
+   CFLAGS="-I$(xcrun --show-sdk-path)/usr/include" pyenv install -v 3.7.3
+   # if you are using another version of python, change the version number accordingly
+   ```
+
+2. Once Python 3.7.3 is installed, configure python for your system.
+
+   _Run:_
+
+   ```bash
+   # 1/2
+   pyenv global 3.7.3
+   # if you are using another version of python, change the version number accordingly
+
+   # 2/2
+   source ~/.bash_profile
+   # zsh
+   source ~/.zshrc
+   ```
+
+_Confirm:_
+
 ```
-
-If you get an error, run:
-
-```bash
-CFLAGS="-I$(xcrun --show-sdk-path)/usr/include" pyenv install -v 3.7.3
-```
-
-Finally, run:
-
-```bash
-pyenv global 3.7.3
-
-# Confirm
 python --version
 
-# Expected Output
+# Example Output
 Python 3.7.3
+```
 
-# Nice to have
+_Optional:_
+
+```bash
 pip install ipython
 ```
 
@@ -300,87 +486,114 @@ pip install ipython
 
 - [ ] **Install Pipenv**
 
+_Run:_
+
 ```bash
 pip install --user pipenv
+```
 
+_Confirm:_
+
+```bash
 # Confirm
 pipenv --version
 
-# Expected Output
+# Example Output
 pipenv, version 2018.11.26
 ```
 
+**Troubleshooting:**
+
 If pipenv cannot be found, we need to add the directory it was installed to the
-\$PATH
+`$PATH`.
 
-First, run:
+1. We need to find the location to add to our `$PATH`.
 
-```bash
-python -m site --user-base
-```
+   _Run:_
 
-You will see a file location, such as `/Users/generalassembly/.local`
+   ```bash
+   python -m site --user-base
+   ```
 
-We want to add "bin" to the end of that path, in this case
-``/Users/generalassembly/.local/bin`
+   This will give us a location such as...
 
-Open your `.bash_profile` if it isn't open already with `code ~/.bash_profile`
+   ```
+   /Users/generalassembly/.local
+   ```
 
-Add this path to the `export Path` line, so it might look somehting like this.
+2. We want to add "/bin" to the end of that `$PATH`. So in in this example, we'd
+   get...
 
-```bash
-export PATH=$HOME/bin:/usr/local/bin:/Users/generalassembly/.local/bin:$PATH
-```
+   ```
+   /Users/generalassembly/.local/bin
+   ```
 
-Note the `:` between different file locations in the \$PATH
+3. Update your `.bash_profile` or `.zshrc` by adding this path to the
+   `export PATH=<blah blah blah>` line (generally near the top).
 
-_Confirm_
+   The updated line could look something like...
+
+   _Edit `.bash_profile` or `.zshrc`:_
+
+   ```bash
+   export PATH=$HOME/bin:/usr/local/bin:/Users/generalassembly/.local/bin:$PATH
+   ```
+
+   **Note:** be mindful of the `:`s between different file locations in the
+   `$PATH`
+
+_Confirm:_
 
 ```bash
 # 1/2
 source ~/.bash_profile
+# zsh
+source ~/.zshrc
 
 # 2/2
 pipenv --version
 
-# Expected Output
+# Example Output
 pipenv, version 2018.11.26
 ```
 
-**Remember** to run `source ~/.bash_profile`
-
 ---
 
-- [ ] **Install Postgress**
+- [ ] **Set up Postgres**
+
+1. Install Postgres.
+
+   _Run:_
+
+   ```bash
+   # 1/2
+   brew cask install postgres
+
+   # 2/2
+   sudo mkdir -p /etc/paths.d &&
+   echo /Applications/Postgres.app/Contents/Versions/latest/bin | sudo tee /etc/paths.d/postgresapp
+   ```
+
+2. Completely close Terminal and reopen a new window.
+
+3. Use Spotlight (`CMD + Space`) and type "Postgres" to open the application.
+
+   If this is the first time running Postgres.app, click the "Initialize"
+   button. This should create the database and start the servers.
+
+_Confirm:_
 
 ```bash
-
-# 1/2
-brew cask install postgres
-
-# 2/2
-sudo mkdir -p /etc/paths.d &&
-echo /Applications/Postgres.app/Contents/Versions/latest/bin | sudo tee /etc/paths.d/postgresapp
-```
-
-Next, Close the Terminal window completely and repoen a new one.
-
-Using Spotlight (`CMD + Space`) and type "Postgres" to open the App.
-
-If this is the first time running Postgres.app, click the "Initialize" button.
-This should create the database and start the servers.
-
-_Confirm_
-
-```
 psql
 
-# type `\q` and hit Enter to exit
+# type "\q" and then hit "Enter" to exit
 ```
 
 ---
 
 - [ ] **Install MongoDB**
+
+_Run:_
 
 ```bash
 # 1/3
@@ -393,30 +606,36 @@ sudo mkdir -p /data/db
 sudo chown -R $(whoami) /data/db
 ```
 
-_Confirm_
+_Confirm:_
 
-Open a new Terminal window with `CMD + T`
+1. Open a new Terminal window with `CMD + T`
 
-In this second window, run:
+2. In this new window...
 
-```bash
-mongod
-```
+   _Run:_
 
-Then go back to the original window and run:
+   ```bash
+   mongod
+   ```
 
-```
-mongo
+3. Go back to the original Terminal window, then...
 
-# type `exit`
-```
+   _Run:_
 
-Finally, you can go back to the second window you ran `mongod` in and enter
-`CTRL + C` to exit the process. You can now close this window.
+   ```bash
+   mongo
+
+   # type "exit"
+   ```
+
+4. Go back to the second window you ran `mongod`, and enter `CTRL + C` to exit
+   the process. You can now close this window.
 
 ---
 
 - [ ] **Install Heroku CLI**
+
+_Run:_
 
 ```bash
 brew tap heroku/brew && brew install heroku
@@ -426,8 +645,9 @@ brew tap heroku/brew && brew install heroku
 
 - [ ] **Install Miscellaneous Apps via Homebrew**
 
-```bash
+_Run:_
 
+```bash
 # 1/2
 brew install libpq
 
@@ -436,22 +656,31 @@ brew cask install postman spectacle
 
 # if you do not already have Chrome, Slack
 brew cask install google-chrome slack
-
-# Confirm
-brew leaves
 ```
 
-You can use Spotlight to open the apps installed with cask by hitting
-`CMD + Space`
+_Confirm:_
+
+```bash
+brew leaves
+# this will list all of the applications installed via Homebrew
+```
+
+You can use Spotlight to open the apps installed with `brew cask` by entering
+`CMD + Space` anywhere.
 
 ---
 
 - [ ] **Install Miscellaneous NPM Packages**
 
+_Run:_
+
 ```bash
 npm install -g npx nodemon prettier surge trash-cli
+```
 
-# Confirm
+_Confirm:_
+
+```bash
 npm list -g --depth=0
 ```
 
@@ -459,24 +688,32 @@ npm list -g --depth=0
 
 - [ ] **Install/Update Git**
 
+_Run:_
+
 ```bash
+# 1/3
 # see initial version of git installed on the system
 git --version
 
-# Expected Output
+# Example Output
 git version 2.20.1 (Apple Git-117)
 
+# 2/3
 # install latest version
-# 1/2
 brew install git
 
-# 2/2
+# 3/3
 source ~/.bash_profile
+# zsh
+source ~/.zshrc
+```
 
-# Confirm
+_Confirm:_
+
+```bash
 git --version
 
-# Expected Output
+# Example Output
 git version 2.21.0
 ```
 
@@ -502,30 +739,24 @@ Go to https://git.generalassemb.ly/ and create an account.
 You should use the same name, username, profile image, and email you have used
 before in creating your normal GitHub account.
 
-```bash
-
-# Replace "YOUR FULL NAME" with the name you would like to use
-git config --global user.name "YOUR FULL NAME"
-
-
-# Replace "THE_EMAIL..." with your email
-git config --global user.email "THE_EMAIL_YOU_USE_FOR_GITHUB@EMAIL.COM"
-```
-
 ---
 
 - [ ] **Configure Git**
 
+_Run:_
+
 ```bash
 # 1/5
-# Replace "YOUR FULL NAME" with the name you would like to use
-git config --global user.name 'YOUR FULL NAME'
+# Replace "<YOUR FULL NAME>" with the name you would like to use
+git config --global user.name <YOUR_FULL_NAME>
 
 # 2/5
-# Replace "THE_EMAIL..." with your email
-git config --global user.email 'THE_EMAIL_YOU_USE_FOR_GITHUB@EMAIL.COM'
+# Replace "<THE_EMAIL...></THE_EMAIL...>" with your email
+git config --global user.email <THE_EMAIL_YOU_USE_FOR_GITHUB@EMAIL.COM>
 
 # 3/5
+# You can copy/paste all of these commands at once, but you might need to hit "Enter" one additional time for the final command
+
 git config --global push.default simple
 git config --global color.ui always
 git config --global color.branch.current 'green reverse'
@@ -535,8 +766,6 @@ git config --global color.status.added green
 git config --global color.status.changed yellow
 git config --global color.status.untracked red
 git config --global core.editor 'code --wait'
-
-# you might need to hit "Enter" one last time
 
 # 4/5
 curl -sSL https://raw.git.generalassemb.ly/DC-WDI/installfest/master/gitignore_global -o ~/.gitignore_global
@@ -568,7 +797,3 @@ git config --list --global
 
 You have installed the basic applications to use as a developer, and you are
 ready for SEI. We are looking forward to working with you in the next weeks!
-
-## Electives
-
-Check out the [Electives](./electives.md) to check out some more cool stuff 😁

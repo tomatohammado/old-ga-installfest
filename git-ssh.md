@@ -41,11 +41,12 @@ of the Pro Git book.
 
 ## Step 0: Checking for existing Keys
 
-First, we need to check for existing SSH keys on your computer. Open Terminal
-and enter:
+First, we need to check for existing SSH keys on your computer. Open Terminal.
 
-```
-$ ls -al ~/.ssh
+_Run:_
+
+```bash
+ls -al ~/.ssh
 # Lists the files in your .ssh directory, if they exist
 ```
 
@@ -54,107 +55,121 @@ to step 1.
 
 ## Step 1: Generate a new SSH Key
 
-1. With Terminal still open, copy and paste the text below. Make sure you
-   substitute in your GitHub email address.
+1. With Terminal still open, copy and paste the text below. **Make sure you
+   substitute in your GitHub email address**.
 
-```
-$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
-# Creates a new ssh key, using the provided email as a label
-# Generating public/private rsa key pair.
-```
+   _Run:_
+
+   ```bash
+   ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+
+   # Creates a new ssh key, using the provided email as a label
+   # Generating public/private rsa key pair.
+   ```
 
 2. We strongly suggest keeping the default settings as they are, so when you're
    prompted to "Enter a file in which to save the key", just press Enter to
    continue.
 
-```
-Enter file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]
-```
+   ```
+   Enter file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]
+   ```
 
 3. You'll be asked to enter a passphrase. We recommend no passphrase, just press
    Enter twice to continue.
 
-```
-Enter passphrase (empty for no passphrase): [Type a passphrase]
-# Enter same passphrase again: [Type passphrase again]
-```
+   ```
+   Enter passphrase (empty for no passphrase): [Type a passphrase]
+   Enter same passphrase again: [Type passphrase again]
+   ```
 
 4. After you enter a passphrase, you'll be given the fingerprint, or id, of your
    SSH key. It will look something like this:
 
-```
-Your identification has been saved in /Users/you/.ssh/id_rsa.
-# Your public key has been saved in /Users/you/.ssh/id_rsa.pub.
-# The key fingerprint is:
-# 01:0f:f4:3b:ca:85:d6:17:a1:7d:f0:68:9d:f0:a2:db your_email@example.com
-```
+   ```
+   Your identification has been saved in /Users/you/.ssh/id_rsa.
+   Your public key has been saved in /Users/you/.ssh/id_rsa.pub.
+   The key fingerprint is:
+   01:0f:f4:3b:ca:85:d6:17:a1:7d:f0:68:9d:f0:a2:db your_email@example.com
+   ```
 
-As well as generate some neat ASCII art too:
+   As well as generate some neat ASCII art too...
 
-```
-The key's randomart image is:
-+--[ RSA 2048]----+
-|        .o..o..=+|
-|       ..  ..o= +|
-|        + + o+ + |
-|         X o .o o|
-|        E =    . |
-|                 |
-|                 |
-|                 |
-|                 |
-+-----------------+
-```
+   ```
+   The key's randomart image is:
+   +--[ RSA 2048]----+
+   |        .o..o..=+|
+   |       ..  ..o= +|
+   |        + + o+ + |
+   |         X o .o o|
+   |        E =    . |
+   |                 |
+   |                 |
+   |                 |
+   |                 |
+   +-----------------+
+   ```
 
 Great now that we have created a new key, we need to add it to the ssh-agent so
 we can easily access it.
 
 ## Step 2: Add Your Key to the SSH-Agent
 
-To configure the ssh-agent program to use your SSH key:
+To configure the ssh-agent program to use your SSH key...
 
-1. Ensure ssh-agent is enabled:
+1. Ensure ssh-agent is enabled...
 
-```
-# start the ssh-agent in the background
-$ eval "$(ssh-agent -s)"
-# Agent pid 59566
-```
+   _Run:_
 
-2. Add your SSH key to the ssh-agent:
+   ```bash
+   # start the ssh-agent in the background
+   $ eval "$(ssh-agent -s)"
 
-```
-$ ssh-add ~/.ssh/id_rsa
-# Identity added: ...
-```
+   # Example Output
+   # Agent pid 59566
+   ```
 
-_Note_: If you didn't generate a new SSH key in Step 1, and used an existing SSH
-key instead, you will need to replace `id_rsa` in the above command with the
+2. Add your SSH key to the ssh-agent...
+
+   _Run:_
+
+   ```bash
+   ssh-add ~/.ssh/id_rsa
+
+   # Example Output
+   # Identity added: ...
+   ```
+
+**Note:** If you didn't generate a new SSH key in Step 1, and used an existing
+SSH key instead, you will need to replace `id_rsa` in the above command with the
 name of your existing private key file.
 
 ## Step 3: Add Your SSH Key to your Github Account
 
-To configure your GitHub account to use your SSH key:
+To configure your GitHub account to use your SSH key...
 
-Copy the SSH key to your clipboard with:
+First, copy the SSH key to your clipboard with:
 
-```
-$ pbcopy < ~/.ssh/id_rsa.pub
+_Run:_
+
+```bash
+pbcopy < ~/.ssh/id_rsa.pub
 # Copies the contents of the id_rsa.pub file to your clipboard
 ```
 
-> #### _Note_:
->
-> `pbcopy` is a Mac only command.
+**Note:**:
 
-> If you are using Linux, type: `cat ~/.ssh/id_rsa.pub` and manually copy the
-> output. **_It's important to copy the key exactly without adding newlines or
-> whitespace._**
+- `pbcopy` is a Mac only command
 
-Keep in mind that your key may also be named id_dsa.pub, id_ecdsa.pub or
-id_ed25519.pub, in which case you must change the filename in the above command
+  If you are using Linux, type: `cat ~/.ssh/id_rsa.pub` and manually copy the
+  output. **_It's important to copy the key exactly without adding newlines or
+  whitespace._**
 
-Then in Github:
+- Keep in mind that your key may also be named id_dsa.pub, id_ecdsa.pub or
+  id_ed25519.pub, in which case you must change the filename in the above
+  command
+
+Next, in Github:
 
 1. In the top right corner of any page, click your profile photo, then click
    Settings.
@@ -174,16 +189,21 @@ To make sure everything is working, you'll now try to SSH into GitHub. When you
 do this, you may be asked to authenticate this action using your password, which
 is the SSH key passphrase you created earlier.
 
-To do this let's:
+1. Open Terminal and enter...
 
-1. Open Terminal and enter:
+_Run:_
 
-```
-$ ssh -T git@github.com
+```bash
+# 1/2
+ssh -T git@github.com
 # Attempts to ssh to GitHub
+
+# 2/2
+ssh -T git@git.generalassemb.ly
+# Attempts to ssh to GitHub Enterprise
 ```
 
-2. You may see this warning:
+2. You may see this warning...
 
 ```
 The authenticity of host 'github.com (207.97.227.239)' can't be established.
@@ -200,28 +220,23 @@ this by verify the fingerprint displayed in the message against
 - RAS SHA256: `SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8`
 - DSA SHA256: `SHA256:br9IjFspm1vxR3iA35FWE+4VTyz1hYVLIE2t1/CeyWQ`
 
-3. You should then see output similar to this:
+3. You should then see output similar to this...
 
 ```
 Hi <username>! You've successfully authenticated, but GitHub does not
-# provide shell access.
+provide shell access.
 ```
 
 If the username in the message is yours, you've successfully set up your SSH
 key!
 
-_Note_: If you receive a message about "access denied," please notify an
-instructor or you can
+_Troubleshooting:_ If you receive a message about "access denied," please notify
+an instructor or you can
 [read these instructions for diagnosing the issue](https://help.github.com/articles/error-permission-denied-publickey/)
 
-_Note_: If you're switching from HTTPS to SSH, you'll now need to update your
-remote repository URLs. For more information,
+**Note:** If you're switching from HTTPS to SSH, you'll now need to update your
+remote repository URLs for your existing local repos. For more information,
 [see Changing a remote's URL](https://help.github.com/articles/changing-a-remote-s-url/).
-
-```
-$ ssh -T git@git.generalassemb.ly
-# Attempts to ssh to GitHub
-```
 
 ## Closing
 

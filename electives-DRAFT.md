@@ -2,9 +2,27 @@
 
 # Installfest: Electives
 
-## Install Fira Code (Font)
+### A Word on Electives
 
-[How to Install](https://github.com/tonsky/FiraCode/wiki)
+The core Installfest is all you need to be prepared for the course. However,
+there are additional tools that instructors and former students found useful
+during the course that are just outside the level of complexity of the core
+installfest.
+
+We made a separate [Electives](./electives.md) document for these topics. If you
+are willing to take the plunge, you'll start with Part One of the Electives and
+install `zsh` before continuing with the normal Instructions.
+
+Using a different shell affects some of the later steps, so it is a little
+simpler to if you decide from the start to opt into the Electives. However, you
+can 100% add the Elective material later on so don't feel like you're missing
+out!
+
+## Zsh va oh-my-zsh
+
+```bash
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+```
 
 ## Additional Homebrew Installs
 
@@ -13,12 +31,6 @@
 brew install wget tree htop axel git-flow
 
 brew cask install iterm2 1password alfred dropbox firefox spotify vagrant virtualbox
-```
-
-## Zsh va oh-my-zsh
-
-```bash
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 
 ### Cool Zsh plugins
