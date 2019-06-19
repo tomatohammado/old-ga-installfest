@@ -186,14 +186,21 @@ Homebrew/homebrew-cask (git revision 3b2b; last commit 2019-06-13)
 
 ---
 
-- [ ] **Install VS Code**
+- [ ] **Install Sublime Text and VS Code**
 
-**Note:** If you already have VS Code installed, you can skip this step.
+**Note:** If you already have Sublime Text and VS Code installed, you can skip
+this step.
+
+VS Code is a _terrific_ code editor, but the advanced features can be a barrier
+for entry for new software engineers.
+
+We recommend students start with Sublime Text the first few weeks before moving
+up to VS Code, and will be installing both.
 
 _Run:_
 
 ```bash
-brew cask install visual-studio-code
+brew cask install sublime-text visual-studio-code
 ```
 
 _Confirm:_
