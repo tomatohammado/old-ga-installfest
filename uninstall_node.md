@@ -1,56 +1,70 @@
 # Uninstall Node (if not installed via 'brew')
 
-If you installed node without using 'brew install node', follow these
-instructions to uninstall that version.
+![So...you want to uninstall node](https://i.imgflip.com/31jrir.jpg)
 
-1.  First, uninstall the files listed in nodejs' Bill of Materials (bom):
+If you've found this page, the Terminal command `node --version` shows you have
+some version of node installed.
 
-```bash
-lsbom -f -l -s -pf /var/db/receipts/org.nodejs.node.pkg.bom | while read f; do  sudo rm /usr/local/${f}; done
+We first want to see if you installed node via Homebrew:
 
-sudo rm -rf /usr/local/lib/node /usr/local/lib/node_modules /var/db/receipts/org.nodejs.*
-```
-
-2.  Go to /usr/local/lib and delete any node and node_modules
+_Run:_
 
 ```bash
-cd /usr/local/lib
-sudo rm -rf node*
+brew leaves
 ```
 
-3.  Go to /usr/local/include and delete any node and node_modules directory
+If you see `node` among the list, then you can uninstall Node with the following
+steps:
+
+_Run:_
 
 ```bash
-cd /usr/local/include
-sudo rm -rf node*
+# 1/4
+brew uninstall node
+# or `brew uninstall --force node`
+
+# 2/4
+brew cleanup
+
+# 3/4
+rm -f /usr/local/bin/npm /usr/local/lib/dtrace/node.d
+
+# 4/4
+rm -rf ~/.npm
 ```
 
-4.  Go to /usr/local/bin and delete any node executable
+---
 
-```bash
-cd /usr/local/bin
-sudo rm -rf /usr/local/bin/node
-sudo rm -rf /usr/local/bin/npm
-ls -las
-```
+If you installed node without using Homebrew, follow these instructions:
 
-5.  Remove man docs
+1. Create an intermediate file:
 
-`sudo rm -rf /usr/local/share/man/man1/node.1`
+   _Run:_
 
-6.  Remove debugging info
+   ```bash
+   lsbom -f -l -s -pf /var/db/receipts/org.nodejs.node.pkg.bom >> ~/filelist.txt
+   ```
 
-`sudo rm -rf /usr/local/lib/dtrace/node.d`
+2. Manually review your file (located in your Home folder)
 
-7.  Remove from Home dir
+   _Run:_
 
-`sudo rm -rf ~/.npm`
+   ```bash
+   code ~/filelist.txt
+   ```
 
-8.  Check your Home directory for any "local" or "lib" or "include" folders, and
-    delete any "node" or "node_modules" from there
+3. Delete the files:
 
-9.  Finally, ensure you have permissions to "/usr/local/"
+   _Run:_
 
-`sudo chown -R`whoami`:staff /usr/local`
+   ```bash
+   # 1/2
+   cat ~/filelist.txt | while read f; do sudo rm /usr/local/${f}; done
 
-_Note_: this might not be necessary in current versions of macOS.
+   # 2/2
+   sudo rm -rf /usr/local/lib/node /usr/local/lib/node_modules /var/db/receipts/org.nodejs.*
+   ```
+
+## Resources
+
+[Stack Overflow: How do I completely uninstall Node.js, and reinstall from beginning (Mac OS X)](https://stackoverflow.com/a/26919540/5578727)
