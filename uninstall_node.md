@@ -20,17 +20,17 @@ _Run:_
 
 ```bash
 # 1/4
-brew uninstall node
+$ brew uninstall node
 # or `brew uninstall --force node`
 
 # 2/4
-brew cleanup
+$ brew cleanup
 
 # 3/4
-rm -f /usr/local/bin/npm /usr/local/lib/dtrace/node.d
+$ rm -f /usr/local/bin/npm /usr/local/lib/dtrace/node.d
 
 # 4/4
-rm -rf ~/.npm
+$ rm -rf ~/.npm
 ```
 
 ---
@@ -42,7 +42,7 @@ If you installed node without using Homebrew, follow these instructions:
    _Run:_
 
    ```bash
-   lsbom -f -l -s -pf /var/db/receipts/org.nodejs.node.pkg.bom >> ~/filelist.txt
+   $ lsbom -f -l -s -pf /var/db/receipts/org.nodejs.node.pkg.bom >> ~/filelist.txt
    ```
 
 2. Manually review your file (located in your Home folder)
@@ -50,7 +50,7 @@ If you installed node without using Homebrew, follow these instructions:
    _Run:_
 
    ```bash
-   code ~/filelist.txt
+   $ subl ~/filelist.txt
    ```
 
 3. Delete the files:
@@ -59,10 +59,10 @@ If you installed node without using Homebrew, follow these instructions:
 
    ```bash
    # 1/2
-   cat ~/filelist.txt | while read f; do sudo rm /usr/local/${f}; done
+   $ cat ~/filelist.txt | while read f; do sudo rm /usr/local/${f}; done
 
    # 2/2
-   sudo rm -rf /usr/local/lib/node /usr/local/lib/node_modules /var/db/receipts/org.nodejs.*
+   $ sudo rm -rf /usr/local/lib/node /usr/local/lib/node_modules /var/db/receipts/org.nodejs.*
    ```
 
 ## Resources
