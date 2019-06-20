@@ -792,10 +792,10 @@ git config --global color.status.untracked red
 git config --global core.editor 'subl --wait'
 
 # 4/5
-curl -sSL https://raw.git.generalassemb.ly/DC-WDI/installfest/master/gitignore_global -o ~/.gitignore_global
+curl -sSL https://raw.git.generalassemb.ly/DC-WDI/installfest/master/gitignore-global--template -o ~/.gitignore-global
 
 # 5/5
-git config --global core.excludesfile ~/.gitignore_global
+git config --global core.excludesfile ~/.gitignore-global
 ```
 
 _Confirm:_
@@ -815,7 +815,7 @@ color.status.added=green
 color.status.changed=yellow
 color.status.untracked=red
 core.editor=subl --wait
-core.excludesfile=/Users/generalassembly/.gitignore_global
+core.excludesfile=/Users/generalassembly/.gitignore-global
 ```
 
 ---
