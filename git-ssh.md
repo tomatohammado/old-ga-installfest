@@ -1,61 +1,27 @@
 # Generating SSH Keys and Linking with Github
 
-## Learning Objectives
-
-- Explain how SSH serves as extra layer of security
-- Define and Differentiate between HTTPS and SSH
-- List the advantages of an SSH connection
-
-## Opening
-
-Secure Shell (SSH) is a command interface and protocol for securely getting
-access to a remote computer. SSH uses public-key cryptography to authenticate
-the remote computer and allow it to authenticate the user, if necessary. Both
-ends of the client/server connection are authenticated using a digital
-certificate, and passwords are protected by being encrypted.
-
-Today, we will be learning about SSH keys and how we can use them in a way to
-identify trusted computers, without involving passwords.
-
-As you may recall, we have been using `https://` clone URLs when we first
-started using Git because this allows us to access all repositories, public and
-private, and these URLs work everywhere.
-
-However, as you might have noticed, whenever you `git pull`, or `git push` to
-the remote repository using HTTPS, you'll be asked for your GitHub username and
-password.
-
-Now, not only is this disruptive in our workflow, especially in the scope of
-this class where we are just developing in an educational environment, but
-sometimes we might require an extra layer of security rather just our user name
-and password.
-
-Enter SSH clone URLs. These allow us to use the SSH protocol and require a two
-step authentication process via an encrypted keypair, which will not only speed
-up development but also give us extra control over the computers that can
-connect to our repositories.
-
-If your are interested in learning more we recommend you checkout
-[this chapter](https://git-scm.com/book/en/v2/Git-on-the-Server-The-Protocols)
-of the Pro Git book.
-
 ## Instructions
 
 ### Check for Existing Keys
 
-First, we need to check for existing SSH keys on your computer. In Terminal...
+In Terminal...
 
 _Run:_
 
 ```bash
-ls -al ~/.ssh
+$ ls -al ~/.ssh
 
 # Example Output – No existing keys
 ls: /Users/generalassembly/.ssh: No such file or directory
 ```
 
-If you see two files: `id_rsa` and `id_rsa.pub`, skip to step 2. Otherwise
-proceed to step 1.
+If the directory does not exist, continue to the next step to generate new SSH
+keys.
+
+If the directory does exist, you likely already have keys (such as `id_rsa` and
+`id_rsa.pub`). If that is the case, you can start at the "Add Your Key to the
+SSH-Agent" step and use those keys but you can also generate new SSH keys if you
+like.
 
 ---
 
@@ -65,7 +31,7 @@ _Run:_
 
 ```bash
 # Replace <THE_EMAIL...></THE_EMAIL...> with your email, , keep the double quotes
-ssh-keygen -t rsa -b 4096 -C "<THE_EMAIL_YOU_USE_FOR_GITHUB@EMAIL.COM>"
+$ ssh-keygen -t rsa -b 4096 -C "<THE_EMAIL_YOU_USE_FOR_GITHUB@EMAIL.COM>"
 
 # We recommend you simply press Enter for these prompts
 Enter file in which to save the key (/Users/generalassembly/.ssh/id_rsa):
@@ -107,7 +73,7 @@ $ eval "$(ssh-agent -s)"
 Agent pid 30609
 
 # 2/2
-ssh-add ~/.ssh/id_rsa
+$ ssh-add ~/.ssh/id_rsa
 
 # Example Output
 Identity added: /Users/generalassembly/.ssh/id_rsa (ga@ga.co)
@@ -122,35 +88,37 @@ name of your existing private key file.
 
 ### Add Your SSH Key to your Github Accounts
 
-First, copy the SSH key to your clipboard with...
+1. Copy the SSH key to your clipboard with...
 
-_Run:_
+   _Run:_
 
-```bash
-pbcopy < ~/.ssh/id_rsa.pub
-```
+   ```bash
+   $ pbcopy < ~/.ssh/id_rsa.pub
+   ```
 
-**Note:**
+   **Note:** `pbcopy` is a macOS only command.
 
-`pbcopy` is a Mac only command.
+   If you are using Linux, type: `cat ~/.ssh/id_rsa.pub` and manually copy the
+   output. **_It iss important to copy the key exactly without adding newlines
+   or whitespace._**
 
-If you are using Linux, type: `cat ~/.ssh/id_rsa.pub` and manually copy the
-output. **_It iss important to copy the key exactly without adding newlines or
-whitespace._**
+2. Go to Github (`github.com`). On the top right corner of any page – click your
+   profile photo, then click Settings.
 
-Next, in Github:
+3. In the user settings sidebar, click "SSH and GPG keys."
 
-1. In the top right corner of any page, click your profile photo, then click
-   Settings.
-2. In the user settings sidebar, click "SSH and GPG keys".
-3. Click "New SSH key".
-4. In the Title field, add a descriptive label that uniquely identifies the
-   computer you're currently using, e.g. "My MacBook Air".
-5. Paste your key into the Key field
-6. Click "Add SSH key"
-7. Confirm the action by entering your GitHub password
+4. Click "New SSH key".
 
-**Repeat the 7 commands above on git.generalassemb.ly.**
+5. In the Title field, add a descriptive label that uniquely identifies the
+   computer you're currently using, e.g. "My MacBook".
+
+6. Paste your key (copied to the clipboard in Step 1) into the Key field.
+
+7. Click "Add SSH key."
+
+8. Confirm the action by entering your GitHub password.
+
+**Repeat the 8 commands above on git.generalassemb.ly.**
 
 ---
 
@@ -160,7 +128,7 @@ _Run:_
 
 ```bash
 # 1/2 Github
-ssh -T git@github.com
+$ ssh -T git@github.com
 
 # Example Output
 The authenticity of host 'github.com (192.30.253.113)' can't be established.
@@ -172,15 +140,17 @@ Hi generalassembly! You've successfully authenticated, but GitHub does not provi
 
 
 # 2/2 Github Enterprise
-ssh -T git@git.generalassemb.ly
+$ ssh -T git@git.generalassemb.ly
 
 ```
 
 You may be asked to authenticate this action using your password, which is the
 SSH key passphrase you created earlier.
 
-**Troubleshooting:** If you receive a message about "access denied," please
-notify an instructor or you can
+#### Troubleshooting
+
+If you receive a message about "access denied," please notify an instructor or
+you can
 [read these instructions for diagnosing the issue](https://help.github.com/articles/error-permission-denied-publickey/)
 
 ## Closing
