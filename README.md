@@ -192,7 +192,7 @@ Homebrew/homebrew-core (git revision 2d19; last commit 2019-11-06)
    $ git --version
 
    # Example Output
-   git version 2.20.1 (Apple Git-117)
+   git version 2.20.1 (Apple Git-122)
    ```
 
 1. Install latest version of git.
@@ -203,15 +203,17 @@ Homebrew/homebrew-core (git revision 2d19; last commit 2019-11-06)
    $ brew install git
    ```
 
-**_Confirm:_**
+### Confirm
 
-Completely close Terminal (`CMD + Q`) and open a new window. Then run:
+Completely close Terminal (`CMD + Q`) and open a new window with Spotlight.
 
-```bash
+Then run:
+
+```sh
 $ git --version
 
 # Example Output
-git version 2.22.0
+git version 2.24.0
 # It's different!
 ```
 
