@@ -228,9 +228,6 @@ git version 2.22.0
 
 #### Troubleshooting
 
-<summary>
-  <details>
-
 If the output from the `brew install git` command mentions `brew link git` near
 the end, try...
 
@@ -245,9 +242,6 @@ $ brew link --overwrite git
 
 After that, try the Confirm step. If that doesn't work, completely close
 Terminal (`CMD + Q`) and open a new window.
-
-  </details>
-</summary>
 
 ---
 
@@ -281,9 +275,6 @@ $ code .
 
 If Sublime Text is installed but `subl .` does not work...
 
-<summary>
-  <details>
-
 1. _Run:_
 
 ```bash
@@ -293,15 +284,9 @@ $ ln -sv "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/l
 2. Run the "Confirm" command again. Worst case, completely close Terminal
    (`CMD + Q`) and open a new window.
 
-  </details>
-</summary>
-
 #### Troubleshooting VS Code
 
 If VS Code is installed but `code .` does not work...
-
-<summary>
-  <details>
 
 1. Anywhere on your computer, press `CMD + Space` to open the Spotlight and type
    "Visual Studio Code" to open the application.
@@ -323,9 +308,6 @@ If VS Code is installed but `code .` does not work...
 
 4. Run the "Confirm" command again. Worst case, completely close Terminal
    (`CMD + Q`) and open a new window.
-
-  </details>
-</summary>
 
 ---
 
