@@ -8,7 +8,7 @@ In Terminal...
 
 _Run:_
 
-```bash
+```sh
 $ ls -al ~/.ssh
 
 # Example Output – No existing keys
@@ -29,7 +29,7 @@ like.
 
 _Run:_
 
-```bash
+```sh
 # Replace <THE_EMAIL...></THE_EMAIL...> with your email, , keep the double quotes
 $ ssh-keygen -t rsa -b 4096 -C "<THE_EMAIL_YOU_USE_FOR_GITHUB@EMAIL.COM>"
 
@@ -65,7 +65,7 @@ The key's randomart image is:
 
 _Run:_
 
-```bash
+```sh
 # 1/2
 $ eval "$(ssh-agent -s)"
 
@@ -92,7 +92,7 @@ name of your existing private key file.
 
    _Run:_
 
-   ```bash
+   ```sh
    $ pbcopy < ~/.ssh/id_rsa.pub
    ```
 
@@ -126,7 +126,7 @@ name of your existing private key file.
 
 _Run:_
 
-```bash
+```sh
 # 1/2 Github
 $ ssh -T git@github.com
 

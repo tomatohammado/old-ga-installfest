@@ -103,13 +103,13 @@ Starting Installfest with the most recent macOS update is vital!
 
 _Run:_
 
-```bash
+```sh
 $ xcode-select --install
 ```
 
 ### Confirm Xcode
 
-```bash
+```sh
 $ xcode-select --version
 
 # Example Output
@@ -122,13 +122,13 @@ xcode-select version 2370.
 
 _Run:_
 
-```bash
+```sh
 $ touch ~/.zshrc
 ```
 
 ### Confirm .zshrc
 
-```bash
+```sh
 $ source ~/.zshrc
 
 # Example Output
@@ -143,7 +143,7 @@ $ source ~/.zshrc
 
    _Run:_
 
-   ```bash
+   ```sh
    $ brew --version
 
    # Example Output – Homebrew installed
@@ -158,7 +158,7 @@ $ source ~/.zshrc
 
    _Run:_
 
-   ```bash
+   ```sh
    $ brew update; brew upgrade; brew cleanup; brew doctor
    ```
 
@@ -166,13 +166,13 @@ $ source ~/.zshrc
 
    _Run:_
 
-   ```bash
+   ```sh
    $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
    ```
 
 ### Confirm Homebrew
 
-```bash
+```sh
 $ brew --version
 
 # Example Output
@@ -188,7 +188,7 @@ Homebrew/homebrew-core (git revision 2d19; last commit 2019-11-06)
 
    _Run:_
 
-   ```bash
+   ```sh
    $ git --version
 
    # Example Output
@@ -199,7 +199,7 @@ Homebrew/homebrew-core (git revision 2d19; last commit 2019-11-06)
 
    _Run:_
 
-   ```bash
+   ```sh
    $ brew install git
    ```
 
@@ -224,7 +224,7 @@ the end, try...
 
 _Run:_
 
-```bash
+```sh
 $ brew link git
 
 # If you get an error message, try:
@@ -244,13 +244,13 @@ Code.
 
 _Run:_
 
-```bash
+```sh
 $ brew cask install sublime-text visual-studio-code
 ```
 
 **_Confirm:_**
 
-```bash
+```sh
 # 1.2
 $ subl .
 
@@ -268,7 +268,7 @@ If Sublime Text is installed but `subl .` does not work...
 
 1. _Run:_
 
-```bash
+```sh
 $ ln -sv "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
 ```
 
@@ -293,7 +293,7 @@ If VS Code is installed but `code .` does not work...
 
    _Run:_
 
-   ```bash
+   ```sh
    $ source ~/.bash_profile
    ```
 
@@ -308,7 +308,7 @@ If VS Code is installed but `code .` does not work...
 
    _Run:_
 
-   ```bash
+   ```sh
    $ subl ~/.bash_profile
 
    ```
@@ -321,7 +321,7 @@ If VS Code is installed but `code .` does not work...
 
    _Update `.bash_profile`:_
 
-   ```bash
+   ```sh
    export PATH="/usr/local/bin:$PATH"
    ```
 
@@ -331,7 +331,7 @@ need to add to it later.
 
 **_Confirm:_**
 
-```bash
+```sh
 $ source ~/.bash_profile
 ```
 
@@ -345,7 +345,7 @@ This can go right after the `export PATH` line from the previous step.
 
 _Update `.bash_profile`:_
 
-```bash
+```sh
 source /usr/local/etc/bash_completion.d/git-completion.bash
 ```
 
@@ -367,7 +367,7 @@ alongside the instructions.
 
 **_Confirm:_**
 
-```bash
+```sh
 $ source ~/.bash_profile
 ```
 
@@ -379,7 +379,7 @@ $ source ~/.bash_profile
 
    _Run:_
 
-   ```bash
+   ```sh
    $ brew install bash-git-prompt
    ```
 
@@ -388,7 +388,7 @@ $ source ~/.bash_profile
 
    _Update `.bash_profile`:_
 
-   ```bash
+   ```sh
    if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
      __GIT_PROMPT_DIR=$(brew --prefix)/opt/bash-git-prompt/share
      source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
@@ -412,7 +412,7 @@ $ source ~/.bash_profile
 
 **_Confirm:_**
 
-```bash
+```sh
 $ source ~/.bash_profile
 ```
 
@@ -426,7 +426,7 @@ If not, completely close Terminal (`CMD + Q`) and reopen a new window.
 
 _Run:_
 
-```bash
+```sh
 $ node --version
 
 # Expected Output – Node not installed
@@ -448,7 +448,7 @@ to avoid file conflicts.
 
 _Run:_
 
-```bash
+```sh
 # 1/2
 $ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
 
@@ -478,7 +478,7 @@ fi
 
 **_Confirm:_**
 
-```bash
+```sh
 $ command -v nvm
 
 # Example Output
@@ -491,13 +491,13 @@ nvm
 
 _Run:_
 
-```bash
+```sh
 $ nvm install node
 ```
 
 **_Confirm:_**
 
-```bash
+```sh
 # 1/2
 $ node --version
 
@@ -521,14 +521,14 @@ conflicts.
 
 1. _Run:_
 
-   ```bash
+   ```sh
    # 1/3
    $ brew install pyenv
    ```
 
 2. _Update `.bash_profile`:_
 
-   ```bash
+   ```sh
    if command -v pyenv 1>/dev/null 2>&1; then
      eval "$(pyenv init -)"
    fi
@@ -559,13 +559,13 @@ conflicts.
 
 3. _Run (in Terminal):_
 
-   ```bash
+   ```sh
    source ~/.bash_profile
    ```
 
 **_Confirm:_**
 
-```bash
+```sh
 # Confirm
 $ pyenv --version
 
@@ -579,7 +579,7 @@ pyenv 1.2.13
 
 _Run:_
 
-```bash
+```sh
 # 1/3
 $ pyenv install 3.7.4
 
@@ -592,7 +592,7 @@ $ source ~/.bash_profile
 
 **_Confirm:_**
 
-```bash
+```sh
 $ python --version
 
 # Example Output
@@ -601,7 +601,7 @@ Python 3.7.4
 
 While we're here...
 
-```bash
+```sh
 $ pip install ipython
 ```
 
@@ -615,13 +615,13 @@ Refer the the [pyenv wiki](https://github.com/pyenv/pyenv/wiki)
 
 _Run:_
 
-```bash
+```sh
 $ pip install --user pipenv
 ```
 
 **_Confirm:_**
 
-```bash
+```sh
 # Confirm
 $ pipenv --version
 
@@ -667,13 +667,13 @@ How do we determine what to change the line to?
 
    _Run:_
 
-   ```bash
+   ```sh
    $ python -m site --user-base
    ```
 
    This will give us a location such as...
 
-   ```bash
+   ```sh
    /Users/<your_user_REPLACE_THIS>/.local
    # Yours will be different!
    ```
@@ -721,7 +721,7 @@ How do we determine what to change the line to?
 
 **_Confirm:_**
 
-```bash
+```sh
 # 1/2
 $ source ~/.bash_profile
 
@@ -738,7 +738,7 @@ pipenv, version 2018.11.26
 
 1. _Run:_
 
-   ```bash
+   ```sh
    # 1/2
    $ brew cask install postgres
 
@@ -755,7 +755,7 @@ pipenv, version 2018.11.26
 
 **_Confirm:_**
 
-```bash
+```sh
 $ psql
 
 # Example Output
@@ -771,7 +771,7 @@ Type "help" for help.
 
 _Run:_
 
-```bash
+```sh
 # 1/3
 $ brew install mongodb
 
@@ -790,7 +790,7 @@ $ sudo chown -R $(whoami) /data/db
 
    _Run:_
 
-   ```bash
+   ```sh
    $ mongod
 
    # Example Output
@@ -801,7 +801,7 @@ $ sudo chown -R $(whoami) /data/db
 
    _Run:_
 
-   ```bash
+   ```sh
    $ mongo
 
    # type "exit" and hit Enter
@@ -816,13 +816,13 @@ $ sudo chown -R $(whoami) /data/db
 
 _Run:_
 
-```bash
+```sh
 $ brew tap heroku/brew && brew install heroku
 ```
 
 **_Confirm:_**
 
-```bash
+```sh
 $ heroku -v
 
 # Example Output
@@ -835,7 +835,7 @@ heroku/7.27.1 darwin-x64 node-v11.14.0
 
 _Run:_
 
-```bash
+```sh
 # 1/2
 $ brew install libpq
 
@@ -848,7 +848,7 @@ $ brew cask install google-chrome slack
 
 **_Confirm:_**
 
-```bash
+```sh
 $ brew leaves
 # this will list all of the applications installed via Homebrew
 ```
@@ -862,13 +862,13 @@ You can use Spotlight to open the apps installed with `brew cask` by entering
 
 _Run:_
 
-```bash
+```sh
 $ npm install -g npx nodemon prettier surge trash-cli
 ```
 
 **_Confirm:_**
 
-```bash
+```sh
 $ npm list -g --depth=0
 ```
 
@@ -878,7 +878,7 @@ $ npm list -g --depth=0
 
 _Run:_
 
-```bash
+```sh
 # 1/5
 # Replace <YOUR FULL NAME> with the name you would like to use, keep the double quotes
 $ git config --global user.name "<YOUR_FULL_NAME>"
@@ -909,7 +909,7 @@ $ git config --global core.excludesfile ~/.gitignore-global
 
 **_Confirm:_**
 
-```bash
+```sh
 $ git config --list --global
 
 # Example Output
