@@ -107,7 +107,7 @@ _Run:_
 $ xcode-select --install
 ```
 
-### Confirm
+### Confirm Xcode
 
 ```bash
 $ xcode-select --version
@@ -126,7 +126,7 @@ _Run:_
 $ touch ~/.zshrc
 ```
 
-### Confirm
+### Confirm .zshrc
 
 ```bash
 $ source ~/.zshrc
@@ -162,7 +162,7 @@ $ source ~/.zshrc
    $ brew update; brew upgrade; brew cleanup; brew doctor
    ```
 
-   If not, install Homebrew.
+   If not, [install Homebrew](https://brew.sh/).
 
    _Run:_
 
@@ -170,14 +170,14 @@ $ source ~/.zshrc
    $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
    ```
 
-**_Confirm:_**
+### Confirm Homebrew
 
 ```bash
 $ brew --version
 
 # Example Output
-Homebrew 2.1.9
-Homebrew/homebrew-core (git revision 9e49; last commit 2019-07-30)
+Homebrew 2.1.16
+Homebrew/homebrew-core (git revision 2d19; last commit 2019-11-06)
 ```
 
 ---
