@@ -83,7 +83,9 @@ students to have them.
 ### Update macOS
 
 For our class, you'll need the latest release of
-[macOS Mojave](https://itunes.apple.com/us/app/macos-mojave/id1398502828?mt=12).
+[macOS Catalina](https://apps.apple.com/us/app/macos-catalina/id1466841314?mt=12).
+
+Starting Installfest with the most recent macOS update is vital!
 
 ---
 
