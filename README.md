@@ -78,9 +78,9 @@ students to have them.
 1. Then, check the board if any changes were made during the installfest.
 1. Finally, ask an instructor for help.
 
-## Instructions 🚀
+# Instructions 🚀
 
-### Update macOS
+## Update macOS
 
 For our class, you'll need the latest release of
 [macOS Catalina](https://apps.apple.com/us/app/macos-catalina/id1466841314?mt=12).
@@ -89,7 +89,7 @@ Starting Installfest with the most recent macOS update is vital!
 
 ---
 
-### Open Terminal
+## Open Terminal
 
 1. Open Spotlight by clicking the little magnifying glass in the top-right
    corner of your screen, or hitting `CMD + Space`.
@@ -99,53 +99,40 @@ Starting Installfest with the most recent macOS update is vital!
 
 ---
 
-### Install Xcode
+## Install Xcode
 
-1. In the Terminal, check if Xcode is installed.
+_Run:_
 
-   _Run:_
+```bash
+$ xcode-select --install
+```
 
-   ```bash
-   $ xcode-select --version
-
-   # Example Output
-   xcode-select version 2354.
-   ```
-
-2. If you do not see a version...
-
-   _Run:_
-
-   ```bash
-   $ xcode-select --install
-   ```
-
-**_Confirm:_**
+### Confirm
 
 ```bash
 $ xcode-select --version
 
 # Example Output
-xcode-select version 2354.
+xcode-select version 2370.
 ```
 
 ---
 
-### Create .bash_profile
+## Create .zshrc file
 
 _Run:_
 
 ```bash
-$ touch ~/.bash_profile
+$ touch ~/.zshrc
 ```
 
-**_Confirm:_**
+### Confirm
 
 ```bash
-$ source ~/.bash_profile
+$ source ~/.zshrc
 
 # Example Output
-# Nothing! if you do not get any errors that means the .bash_profile is in good shape.
+# Nothing! if you do not get any errors that means the .zshrc is in good shape.
 ```
 
 ---
