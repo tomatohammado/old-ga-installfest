@@ -323,6 +323,7 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 
 ```sh
 # In the Terminal
+
 $ source ~/.bash_profile
 ```
 
@@ -392,6 +393,7 @@ _Run:_
 $ node --version
 
 # Expected Output – Node not installed
+
 -bash: node: command not found
 ```
 
@@ -418,10 +420,9 @@ $ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh |
 $ source ~/.bash_profile
 ```
 
-_New Changes in `.bash_profile`:_
+_Updated `.bash_profile`:_
 
 ```diff
-# In .bash_profile
 export BASH_SILENCE_DEPRECATION_WARNING=1
 export PATH="$PATH"
 
@@ -440,6 +441,7 @@ source /usr/local/etc/bash_completion.d/git-completion.bash
 $ command -v nvm
 
 # Example Output
+
 nvm
 ```
 
@@ -458,13 +460,15 @@ $ nvm install node
 $ node --version
 
 # Example Output
-v12.7.0
+
+v13.1.0
 
 # 2/2
 $ npm --version
 
 # Example Output
-v6.10.0
+
+v6.12.1
 ```
 
 ## Install Starship prompt
