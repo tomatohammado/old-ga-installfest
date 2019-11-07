@@ -30,6 +30,7 @@ _Run:_
 
 ```sh
 # Replace <THE_EMAIL...></THE_EMAIL...> with your email, , keep the double quotes
+
 $ ssh-keygen -t rsa -b 4096 -C "<THE_EMAIL_YOU_USE_FOR_GITHUB@EMAIL.COM>"
 
 # We recommend you simply press Enter for these prompts
@@ -65,6 +66,7 @@ _Run:_
 
 ```sh
 # 1/2
+
 $ eval "$(ssh-agent -s)"
 
 # Example Output
@@ -72,6 +74,7 @@ $ eval "$(ssh-agent -s)"
 Agent pid 30609
 
 # 2/2
+
 $ ssh-add ~/.ssh/id_rsa
 
 # Example Output
@@ -123,6 +126,7 @@ _Run:_
 
 ```sh
 # 1/2 Github
+
 $ ssh -T git@github.com
 
 # Example Output
@@ -136,6 +140,7 @@ Hi generalassembly! You've successfully authenticated, but GitHub does not provi
 
 
 # 2/2 Github Enterprise
+
 $ ssh -T git@git.generalassemb.ly
 ```
 
