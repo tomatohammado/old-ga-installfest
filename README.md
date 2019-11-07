@@ -739,9 +739,9 @@ $ pipenv --version
 pipenv, version 2018.11.26
 ```
 
----
+## Install Postgres
 
-### Install PostgreSQL
+[Source](https://postgresapp.com/)
 
 1. _Run:_
 
@@ -760,7 +760,7 @@ pipenv, version 2018.11.26
    If this is the first time running Postgres.app, click the "Initialize"
    button. This will create the database and start your local server.
 
-**_Confirm:_**
+### Confirm Postgres
 
 ```sh
 $ psql
@@ -776,50 +776,32 @@ Type "help" for help.
 
 ### Install MongoDB
 
+[Source](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/)
+
 _Run:_
 
 ```sh
 # 1/3
-$ brew install mongodb
+$ brew tap mongodb/brew
 
 # 2/3
-$ sudo mkdir -p /data/db
+$ brew install mongodb-community@4.2
 
 # 3/3
-$ sudo chown -R $(whoami) /data/db
+$ brew services start mongodb-community@4.2
 ```
 
-**_Confirm:_**
+### Confirm MongoDB
 
-1. Open a new Terminal tab with `CMD + T`
+_Run:_
 
-2. In this new tab...
-
-   _Run:_
-
-   ```sh
-   $ mongod
-
-   # Example Output
-   # A whooooooole lot of code
-   ```
-
-3. Go back to the original Terminal tab, then...
-
-   _Run:_
-
-   ```sh
-   $ mongo
-
-   # type "exit" and hit Enter
-   ```
-
-4. Go back to the second tab you ran `mongod`, and enter `CTRL + C` to exit the
-   process. You can now close the tab.
-
----
+```sh
+$ ps -ef | grep mongod
+```
 
 ### Install Heroku CLI
+
+[Source](https://devcenter.heroku.com/articles/heroku-cli)
 
 _Run:_
 
@@ -827,7 +809,7 @@ _Run:_
 $ brew tap heroku/brew && brew install heroku
 ```
 
-**_Confirm:_**
+### Confirm Heroku CLI
 
 ```sh
 $ heroku -v
