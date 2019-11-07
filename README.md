@@ -360,8 +360,6 @@ need to add to it later.
 $ source ~/.bash_profile
 ```
 
----
-
 ### Add Git Auto-Completion to bash
 
 In your `.bash_profile`, add this line and save the file (`CMD + S`).
@@ -401,8 +399,6 @@ If you get `command not found`, you can move on to the step.
 
 If got any other answer,
 [follow these steps to uninstall Node](./uninstall_node.md)!
-
----
 
 ### Install NVM
 
@@ -845,8 +841,6 @@ $ brew leaves
 You can use Spotlight to open the apps installed with `brew cask` by entering
 `CMD + Space` anywhere.
 
----
-
 ### Install Miscellaneous NPM Packages
 
 _Run:_
@@ -861,9 +855,7 @@ $ npm install -g npx nodemon prettier surge trash-cli
 $ npm list -g --depth=0
 ```
 
----
-
-### Configure Git
+## Configure Git
 
 _Run:_
 
