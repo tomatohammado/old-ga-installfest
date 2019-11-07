@@ -99,6 +99,18 @@ Starting Installfest with the most recent macOS update is vital!
 
 ---
 
+## Switch to bash
+
+_Run:_
+
+```sh
+$ chsh -s /bin/bash
+```
+
+### Confirm bash
+
+Close the Terminal completely (`CMD + Q`), then open it again.
+
 ## Install Xcode
 
 _Run:_
@@ -118,18 +130,18 @@ xcode-select version 2370.
 
 ---
 
-## Create .zshrc file
+## Create .bash_profile file
 
 _Run:_
 
 ```sh
-$ touch ~/.zshrc
+$ touch ~/.bash_profile
 ```
 
-### Confirm .zshrc
+### Confirm .bash_profile
 
 ```sh
-$ source ~/.zshrc
+$ source ~/.bash_profile
 
 # Example Output
 # Nothing! if you do not get any errors that means the .zshrc is in good shape.
@@ -252,19 +264,19 @@ $ brew cask install sublime-text visual-studio-code
 
 ```sh
 # 1.2
-$ subl .
+$ subl ~/.bash_profile
 
 # Keep this window open
 
 # 2/2
-$ code .
+$ code ~/.bash_profile
 
 # Close VS Code completely
 ```
 
 #### Troubleshooting Sublime
 
-If Sublime Text is installed but `subl .` does not work...
+If Sublime Text is installed but `subl ~/.bash_profile` does not work...
 
 1. _Run:_
 
@@ -277,7 +289,7 @@ $ ln -sv "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/l
 
 #### Troubleshooting VS Code
 
-If VS Code is installed but `code .` does not work...
+If VS Code is installed but `code ~/.bash_profile` does not work...
 
 1. Anywhere on your computer, press `CMD + Space` to open the Spotlight and type
    "Visual Studio Code" to open the application.
@@ -302,34 +314,47 @@ If VS Code is installed but `code .` does not work...
 
 ---
 
+## Remove warning about zsh being default shell
+
+In the `.bash_profile` file open in your editor (Sublime or VS Code), add this
+line to the top:
+
+```sh
+export BASH_SILENCE_DEPRECATION_WARNING=1
+```
+
+## Confirm remove zsh warning
+
+```sh
+# In the Terminal
+$ source ~/.bash_profile
+```
+
+--
+
 ### Set the \$PATH
 
-1. Open your `.bash_profile`.
+Add the following line to the very top of the `.bash_profile` and then save
+(`CMD + S`).
 
-   _Run:_
+```sh
+export PATH="$PATH"
+```
 
-   ```sh
-   $ subl ~/.bash_profile
+_Updates `.bash_profile`:_
 
-   ```
+```diff
+export BASH_SILENCE_DEPRECATION_WARNING=1
 
-   Assuming this is the first time you are working with the `.bash_profile`, the
-   file that just opened could be entirely empty.
-
-2. Add the following line to the very top of the `.bash_profile` and then save
-   (`CMD + S`).
-
-   _Update `.bash_profile`:_
-
-   ```sh
-   export PATH="/usr/local/bin:$PATH"
-   ```
+# The "+" is just to show the added line, it is not a part of the final code.
++ export PATH="$PATH"
+```
 
 **Note:** If you already have code in `.bash_profile`, that's awesome! Just make
 sure there is a line that says `export PATH="<blah blah blah>"` because we will
 need to add to it later.
 
-**_Confirm:_**
+### Confirm add \$PATH
 
 ```sh
 $ source ~/.bash_profile
@@ -351,11 +376,11 @@ source /usr/local/etc/bash_completion.d/git-completion.bash
 
 Your `.bash_profile` should look something like this:
 
-_New Changes:_
+_Updated .bash_profile:_
 
 ```diff
-# In .bash_profile
-export PATH="/usr/local/bin:$PATH"
+export BASH_SILENCE_DEPRECATION_WARNING=1
+export PATH="$PATH"
 
 + source /usr/local/etc/bash_completion.d/git-completion.bash
 ```
@@ -400,7 +425,8 @@ $ source ~/.bash_profile
 
    ```diff
    # In .bash_profile
-   export PATH="/usr/local/bin:$PATH"
+   export BASH_SILENCE_DEPRECATION_WARNING=1
+   export PATH="$PATH"
 
    source /usr/local/etc/bash_completion.d/git-completion.bash
 
@@ -460,7 +486,8 @@ _New Changes in `.bash_profile`:_
 
 ```diff
 # In .bash_profile
-export PATH="/usr/local/bin:$PATH"
+export BASH_SILENCE_DEPRECATION_WARNING=1
+export PATH="$PATH"
 
 source /usr/local/etc/bash_completion.d/git-completion.bash
 
@@ -538,7 +565,8 @@ conflicts.
 
    ```diff
    # In .bash_profile
-   export PATH="/usr/local/bin:$PATH"
+   export BASH_SILENCE_DEPRECATION_WARNING=1
+   export PATH="$PATH"
 
    source /usr/local/etc/bash_completion.d/git-completion.bash
 
@@ -641,8 +669,9 @@ The change will look something like...
 
 ```diff
 # In .bash_profile
-- export PATH="/usr/local/bin:$PATH"
-+ export PATH="/usr/local/bin:/Users/<your_user_REPLACE_THIS>/.local/bin:$PATH"
+export BASH_SILENCE_DEPRECATION_WARNING=1
+- export PATH="$PATH"
++ export PATH="/Users/<your_user_REPLACE_THIS>/.local/bin:$PATH"
 
 source /usr/local/etc/bash_completion.d/git-completion.bash
 
@@ -703,8 +732,9 @@ How do we determine what to change the line to?
 
    ```diff
    # In .bash_profile
-   - export PATH="/usr/local/bin:$PATH"
-   + export PATH="/usr/local/bin:/Users/<your_user_REPLACE_THIS>/.local/bin:$PATH"
+   export BASH_SILENCE_DEPRECATION_WARNING=1
+   - export PATH="$PATH"
+   + export PATH="/Users/<your_user_REPLACE_THIS>/.local/bin:$PATH"
 
    source /usr/local/etc/bash_completion.d/git-completion.bash
 
