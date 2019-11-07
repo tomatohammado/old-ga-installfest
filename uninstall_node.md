@@ -9,7 +9,7 @@ We first want to see if you installed node via Homebrew:
 
 _Run:_
 
-```bash
+```sh
 brew leaves
 ```
 
@@ -18,7 +18,7 @@ steps:
 
 _Run:_
 
-```bash
+```sh
 # 1/4
 $ brew uninstall node
 # or `brew uninstall --force node`
@@ -41,7 +41,7 @@ If you installed node without using Homebrew, follow these instructions:
 
    _Run:_
 
-   ```bash
+   ```sh
    $ lsbom -f -l -s -pf /var/db/receipts/org.nodejs.node.pkg.bom >> ~/filelist.txt
    ```
 
@@ -49,7 +49,7 @@ If you installed node without using Homebrew, follow these instructions:
 
    _Run:_
 
-   ```bash
+   ```sh
    $ subl ~/filelist.txt
    ```
 
@@ -57,7 +57,7 @@ If you installed node without using Homebrew, follow these instructions:
 
    _Run:_
 
-   ```bash
+   ```sh
    # 1/2
    $ cat ~/filelist.txt | while read f; do sudo rm /usr/local/${f}; done
 

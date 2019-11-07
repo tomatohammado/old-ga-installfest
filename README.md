@@ -75,19 +75,19 @@ students to have them.
 ### If You Run Into an Issue
 
 1. First, verify that you've typed the given commands **letter for letter**.
-1. Then, check the board if any changes were made during the installfest.
-1. Finally, ask an instructor for help.
+2. Then, check the board if any changes were made during the installfest.
+3. Finally, ask an instructor for help.
 
-## Instructions 🚀
+# Instructions 🚀
 
-### Update macOS
+## Update macOS
 
 For our class, you'll need the latest release of
-[macOS Mojave](https://itunes.apple.com/us/app/macos-mojave/id1398502828?mt=12).
+[macOS Catalina](https://apps.apple.com/us/app/macos-catalina/id1466841314?mt=12).
 
----
+Starting Installfest with the most recent macOS update is vital!
 
-### Open Terminal
+## Open Terminal
 
 1. Open Spotlight by clicking the little magnifying glass in the top-right
    corner of your screen, or hitting `CMD + Space`.
@@ -95,73 +95,72 @@ For our class, you'll need the latest release of
 2. Type "Terminal" into the Spotlight text input and select the Terminal app. A
    new Terminal window should pop up.
 
----
-
-### Install Xcode
-
-1. In the Terminal, check if Xcode is installed.
-
-   _Run:_
-
-   ```bash
-   $ xcode-select --version
-
-   # Example Output
-   xcode-select version 2354.
-   ```
-
-2. If you do not see a version...
-
-   _Run:_
-
-   ```bash
-   $ xcode-select --install
-   ```
-
-**_Confirm:_**
-
-```bash
-$ xcode-select --version
-
-# Example Output
-xcode-select version 2354.
-```
-
----
-
-### Create .bash_profile
+## Switch to bash
 
 _Run:_
 
-```bash
+```sh
+# Remember: the "$" is the start of the Terminal prompt!
+
+$ chsh -s /bin/bash
+```
+
+### Confirm bash
+
+Close the Terminal completely (`CMD + Q`), then open it again.
+
+## Create .bash_profile
+
+_Run:_
+
+```sh
 $ touch ~/.bash_profile
 ```
 
-**_Confirm:_**
+### Confirm .bash_profile
 
-```bash
+```sh
 $ source ~/.bash_profile
 
 # Example Output
-# Nothing! if you do not get any errors that means the .bash_profile is in good shape.
+
+# Nothing! if you do not get any errors that means the .zshrc is in good shape.
 ```
 
----
+## Install Xcode
 
-### Install Homebrew
+_Run:_
+
+```sh
+$ xcode-select --install
+```
+
+### Confirm Xcode
+
+```sh
+$ xcode-select --version
+
+# Example Output
+
+xcode-select version 2370.
+```
+
+## Install Homebrew
 
 1. Check to see if you have Homebrew installed.
 
    _Run:_
 
-   ```bash
+   ```sh
    $ brew --version
 
    # Example Output – Homebrew installed
+
    Homebrew 2.1.9
    Homebrew/homebrew-core (git revision 9e49; last commit 2019-07-30)
 
    # Example Output – Homebrew not installed
+
    -bash: brew: command not found
    ```
 
@@ -169,139 +168,127 @@ $ source ~/.bash_profile
 
    _Run:_
 
-   ```bash
+   ```sh
    $ brew update; brew upgrade; brew cleanup; brew doctor
    ```
 
-   If not, install Homebrew.
+   If not, [install Homebrew](https://brew.sh/).
 
    _Run:_
 
-   ```bash
+   ```sh
    $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
    ```
 
-**_Confirm:_**
+### Confirm Homebrew
 
-```bash
+```sh
 $ brew --version
 
 # Example Output
-Homebrew 2.1.9
-Homebrew/homebrew-core (git revision 9e49; last commit 2019-07-30)
+
+Homebrew 2.1.16
+Homebrew/homebrew-core (git revision 2d19; last commit 2019-11-06)
 ```
 
----
-
-### (Re)install Git
+## (Re)install Git
 
 1. See initial version of git installed on the system.
 
    _Run:_
 
-   ```bash
+   ```sh
    $ git --version
 
    # Example Output
-   git version 2.20.1 (Apple Git-117)
+
+   git version 2.20.1 (Apple Git-122)
    ```
 
-1. Install latest version of git.
+2. Install latest version of git.
 
    _Run:_
 
-   ```bash
+   ```sh
    $ brew install git
    ```
 
-**_Confirm:_**
+3. Completely close Terminal (`CMD + Q`) and open a new window with Spotlight.
 
-Completely close Terminal (`CMD + Q`) and open a new window. Then run:
+### Confirm Git
 
-```bash
+_Run:_
+
+```sh
 $ git --version
 
 # Example Output
-git version 2.22.0
-# It's different!
+
+git version 2.24.0
 ```
 
 #### Troubleshooting
-
-<summary>
-  <details>
 
 If the output from the `brew install git` command mentions `brew link git` near
 the end, try...
 
 _Run:_
 
-```bash
+```sh
 $ brew link git
 
 # If you get an error message, try:
+
 $ brew link --overwrite git
 ```
 
 After that, try the Confirm step. If that doesn't work, completely close
 Terminal (`CMD + Q`) and open a new window.
 
-  </details>
-</summary>
-
----
-
-### Install Code Editors
+## Install Code Editors
 
 We will be using Sublime Text during Installfest, and recommend using it for the
-first few weeks before we move up to a more complex but powerful editor, VS
-Code.
+first few weeks before trying out the more complex but powerful editor: VS Code.
 
 _Run:_
 
-```bash
+```sh
 $ brew cask install sublime-text visual-studio-code
 ```
 
-**_Confirm:_**
+### Confirm Code Editors
 
-```bash
-# 1.2
-$ subl .
+```sh
+# 1/2
+
+$ subl ~/.bash_profile
 
 # Keep this window open
 
 # 2/2
-$ code .
 
-# Close VS Code completely
+$ code ~/.bash_profile
 ```
 
-#### Troubleshooting Sublime
+You can either use VS Code or Sublime Text to edit your `.bash_profile`. Keep
+either window open.
 
-If Sublime Text is installed but `subl .` does not work...
+#### Troubleshooting Sublime Text
 
-<summary>
-  <details>
+If Sublime Text is installed but `subl ~/.bash_profile` does not work...
 
 1. _Run:_
 
-```bash
+```sh
 $ ln -sv "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
 ```
 
 2. Run the "Confirm" command again. Worst case, completely close Terminal
    (`CMD + Q`) and open a new window.
 
-  </details>
-</summary>
-
 #### Troubleshooting VS Code
 
-If VS Code is installed but `code .` does not work...
-
-<summary>
-  <details>
+If VS Code is installed but `code ~/.bash_profile` does not work...
 
 1. Anywhere on your computer, press `CMD + Space` to open the Spotlight and type
    "Visual Studio Code" to open the application.
@@ -317,74 +304,28 @@ If VS Code is installed but `code .` does not work...
 
    _Run:_
 
-   ```bash
+   ```sh
    $ source ~/.bash_profile
    ```
 
 4. Run the "Confirm" command again. Worst case, completely close Terminal
    (`CMD + Q`) and open a new window.
 
-  </details>
-</summary>
+## Remove bash warning
 
----
+In the `.bash_profile` file open in your editor (Sublime or VS Code), add this
+line to the top:
 
-### Set the \$PATH
+```sh
+export BASH_SILENCE_DEPRECATION_WARNING=1
+```
 
-1. Open your `.bash_profile`.
+### Confirm Remove bash warning
 
-   _Run:_
+```sh
+# In the Terminal
 
-   ```bash
-   $ subl ~/.bash_profile
-
-   ```
-
-   Assuming this is the first time you are working with the `.bash_profile`, the
-   file that just opened could be entirely empty.
-
-2. Add the following line to the very top of the `.bash_profile` and then save
-   (`CMD + S`).
-
-   _Update `.bash_profile`:_
-
-   ```bash
-   export PATH="/usr/local/bin:$PATH"
-   ```
-
-**Note:** If you already have code in `.bash_profile`, that's awesome! Just make
-sure there is a line that says `export PATH="<blah blah blah>"` because we will
-need to add to it later.
-
-**_Confirm:_**
-
-```bash
 $ source ~/.bash_profile
-```
-
----
-
-### Add Git Auto-Completion to bash
-
-In your `.bash_profile`, add this line and save the file (`CMD + S`).
-
-This can go right after the `export PATH` line from the previous step.
-
-_Update `.bash_profile`:_
-
-```bash
-source /usr/local/etc/bash_completion.d/git-completion.bash
-```
-
-Your `.bash_profile` should look something like this:
-
-_New Changes:_
-
-```diff
-# In .bash_profile
-export PATH="/usr/local/bin:$PATH"
-
-+ source /usr/local/etc/bash_completion.d/git-completion.bash
 ```
 
 **Note:** Installfest provides an
@@ -392,71 +333,67 @@ export PATH="/usr/local/bin:$PATH"
 be making. It might be helpful to open it in a new browser tab to refer to
 alongside the instructions.
 
-**_Confirm:_**
+## Set the \$PATH
 
-```bash
+Add the following line to the very top of the `.bash_profile` and then save
+(`CMD + S`).
+
+```sh
+export PATH="$PATH"
+```
+
+_Updated `.bash_profile`:_
+
+```diff
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
+# The "+" is just to show the added line, it is not a part of the final code.
+
++ export PATH="$PATH"
+```
+
+**Note:** If you already have code in `.bash_profile`, that's awesome! Just make
+sure there is a line that says `export PATH="<blah blah blah>"` because we will
+need to add to it later.
+
+### Confirm \$PATH
+
+```sh
 $ source ~/.bash_profile
 ```
 
----
+### Add Git Auto-Completion to bash
 
-### Install bash-git-prompt
+In your `.bash_profile`, add this line and save the file (`CMD + S`).
 
-1. Install bash-git-prompt.
+```sh
+source /usr/local/etc/bash_completion.d/git-completion.bash
+```
 
-   _Run:_
+_Updated `.bash_profile`:_
 
-   ```bash
-   $ brew install bash-git-prompt
-   ```
+```diff
+export BASH_SILENCE_DEPRECATION_WARNING=1
+export PATH="$PATH"
 
-2. Add the following near the bottom of the `.bash_profile` and save the file
-   (`CMD + S`).
++ source /usr/local/etc/bash_completion.d/git-completion.bash
+```
 
-   _Update `.bash_profile`:_
+### Confirm Git Auto-Completion
 
-   ```bash
-   if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
-     __GIT_PROMPT_DIR=$(brew --prefix)/opt/bash-git-prompt/share
-     source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
-   fi
-
-   ```
-
-   _New Changes:_
-
-   ```diff
-   # In .bash_profile
-   export PATH="/usr/local/bin:$PATH"
-
-   source /usr/local/etc/bash_completion.d/git-completion.bash
-
-   + if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
-   +   __GIT_PROMPT_DIR=$(brew --prefix)/opt/bash-git-prompt/share
-   +   source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
-   + fi
-   ```
-
-**_Confirm:_**
-
-```bash
+```sh
 $ source ~/.bash_profile
 ```
 
-Terminal should look a little different now!
-
-If not, completely close Terminal (`CMD + Q`) and reopen a new window.
-
----
-
-### Uninstall Node (if installed)
+## Uninstall Node (if installed)
 
 _Run:_
 
-```bash
+```sh
 $ node --version
 
 # Expected Output – Node not installed
+
 -bash: node: command not found
 ```
 
@@ -464,8 +401,6 @@ If you get `command not found`, you can move on to the step.
 
 If got any other answer,
 [follow these steps to uninstall Node](./uninstall_node.md)!
-
----
 
 ### Install NVM
 
@@ -475,26 +410,23 @@ to avoid file conflicts.
 
 _Run:_
 
-```bash
+```sh
 # 1/2
+
 $ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
 
 # 2/2
+
 $ source ~/.bash_profile
 ```
 
-_New Changes in `.bash_profile`:_
+_Updated `.bash_profile`:_
 
 ```diff
-# In .bash_profile
-export PATH="/usr/local/bin:$PATH"
+export BASH_SILENCE_DEPRECATION_WARNING=1
+export PATH="$PATH"
 
 source /usr/local/etc/bash_completion.d/git-completion.bash
-
-if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
-  __GIT_PROMPT_DIR=$(brew --prefix)/opt/bash-git-prompt/share
-  source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
-fi
 
 # There might not be an empty line between the previous code and these new lines, feel free to add it in!
 + export NVM_DIR="$HOME/.nvm"
@@ -505,42 +437,116 @@ fi
 
 **_Confirm:_**
 
-```bash
+```sh
 $ command -v nvm
 
 # Example Output
+
 nvm
 ```
-
----
 
 ### Install Node
 
 _Run:_
 
-```bash
+```sh
 $ nvm install node
 ```
 
 **_Confirm:_**
 
-```bash
+```sh
 # 1/2
+
 $ node --version
 
 # Example Output
-v12.7.0
+
+v13.1.0
 
 # 2/2
+
 $ npm --version
 
 # Example Output
-v6.10.0
+
+v6.12.1
 ```
 
----
+## Install Starship prompt
 
-### Install Pyenv
+[Source](https://github.com/starship/starship)
+
+1. Install Starship.
+
+   ```sh
+   $ brew install starship
+   ```
+
+2. Add to `.bash_profile`.
+
+   ```sh
+   eval "$(starship init bash)"
+   ```
+
+   **Note:** We want to add this line and keep it
+   [near the end of `~/.bash_profile`](https://github.com/starship/starship#bash)
+
+   _Updated `.bash_profile`:_
+
+   ```diff
+   export BASH_SILENCE_DEPRECATION_WARNING=1
+   export PATH="$PATH"
+
+   source /usr/local/etc/bash_completion.d/git-completion.bash
+
+   export NVM_DIR="$HOME/.nvm"
+   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+   + eval "$(starship init bash)"
+   ```
+
+### Confirm Starship prompt
+
+```sh
+$ source ~/.bash_profile
+```
+
+Terminal should look a little different now!
+
+If not, completely close Terminal (`CMD + Q`) and reopen a new window.
+
+## Download Fira Code
+
+Spaceship Prompt uses some new characters, so we need to download and configure
+a programming font for our Terminal!
+
+1. Download
+   [Fira Code here](https://github.com/tonsky/FiraCode/releases/download/2/FiraCode_2.zip).
+
+2. Unzip the folder when it is finishe downloading, and open the `tff/` folder.
+
+3. Highlight all of the `.tff` files, and the double click them to open the
+   prompt to add them to the Font Book app.
+
+   Once they are installed, you should see them on the list after a few seconds.
+
+4. In the Terminal App, open the Preferences with `CMD + ,`
+
+5. Go to the "Profiles" tab.
+
+6. Under "Font", click the "Change" button and select Fira Code from the list.
+
+7. Under "Text", click the box for "Antialias text"
+
+### Confirm Fira Code
+
+The font in your terminal should be different!
+
+## Install Pyenv
+
+[Source](https://github.com/pyenv/pyenv#installation)
 
 **Note:** Save (`CMD + S`) your `.bash_profile` before starting this step – it
 will update the `.bash_profile` so we need to save the file first to avoid file
@@ -548,31 +554,26 @@ conflicts.
 
 1. _Run:_
 
-   ```bash
-   # 1/3
+   ```sh
    $ brew install pyenv
    ```
 
-2. _Update `.bash_profile`:_
+2. Add to `.bash_profile`:
 
-   ```bash
+   ```sh
    if command -v pyenv 1>/dev/null 2>&1; then
      eval "$(pyenv init -)"
    fi
    ```
 
-   _New Changes:_
+   _Updated `.bash_profile`:_
 
    ```diff
    # In .bash_profile
-   export PATH="/usr/local/bin:$PATH"
+   export BASH_SILENCE_DEPRECATION_WARNING=1
+   export PATH="$PATH"
 
    source /usr/local/etc/bash_completion.d/git-completion.bash
-
-   if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
-     __GIT_PROMPT_DIR=$(brew --prefix)/opt/bash-git-prompt/share
-     source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
-   fi
 
    export NVM_DIR="$HOME/.nvm"
    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -582,111 +583,97 @@ conflicts.
    +   eval "$(pyenv init -)"
    + fi
 
+   eval "$(starship init bash)"
    ```
 
 3. _Run (in Terminal):_
 
-   ```bash
-   source ~/.bash_profile
+   ```sh
+   $ source ~/.bash_profile
    ```
 
-**_Confirm:_**
+### Confirm pyenv
 
-```bash
-# Confirm
+```sh
 $ pyenv --version
 
 # Example Output
-pyenv 1.2.13
+
+pyenv 1.2.15
 ```
 
----
-
-### Install Python
+## Install Python
 
 _Run:_
 
-```bash
+```sh
 # 1/3
-$ pyenv install 3.7.4
+
+$ pyenv install 3.8.0
 
 # 2/3
-$ pyenv global 3.7.4
+
+$ pyenv global 3.8.0
 
 # 3/3
+
 $ source ~/.bash_profile
 ```
 
-**_Confirm:_**
+### Confirm python
 
-```bash
+```sh
 $ python --version
 
 # Example Output
-Python 3.7.4
-```
 
-While we're here...
-
-```bash
-$ pip install ipython
+Python 3.8.0
 ```
 
 #### Troubleshooting
 
 Refer the the [pyenv wiki](https://github.com/pyenv/pyenv/wiki)
 
----
-
-### Install Pipenv
+## Update pip
 
 _Run:_
 
-```bash
+```sh
+$ pip install --upgrade pip
+```
+
+While we're here...
+
+```sh
+$ pip install ipython
+```
+
+## Install Pipenv
+
+_Run:_
+
+```sh
 $ pip install --user pipenv
 ```
 
-**_Confirm:_**
+### Confirm pipenv
 
-```bash
-# Confirm
+```sh
 $ pipenv --version
 
 # Example Output – Success
+
 pipenv, version 2018.11.26
 
 # Example Output – More work needed
+
 -bash: pipenv: command not found
 ```
 
-#### Troubleshooting
+#### Troubleshooting pipenv
 
 If pipenv cannot be found, we need to make one change to the `.bash_profile` so
 the Terminal can find the application.
-
-The change will look something like...
-
-```diff
-# In .bash_profile
-- export PATH="/usr/local/bin:$PATH"
-+ export PATH="/usr/local/bin:/Users/<your_user_REPLACE_THIS>/.local/bin:$PATH"
-
-source /usr/local/etc/bash_completion.d/git-completion.bash
-
-if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
-  __GIT_PROMPT_DIR=$(brew --prefix)/opt/bash-git-prompt/share
-  source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
-fi
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
-
-```
 
 How do we determine what to change the line to?
 
@@ -694,14 +681,15 @@ How do we determine what to change the line to?
 
    _Run:_
 
-   ```bash
+   ```sh
    $ python -m site --user-base
    ```
 
    This will give us a location such as...
 
-   ```bash
+   ```sh
    /Users/<your_user_REPLACE_THIS>/.local
+
    # Yours will be different!
    ```
 
@@ -730,46 +718,48 @@ How do we determine what to change the line to?
 
    ```diff
    # In .bash_profile
-   - export PATH="/usr/local/bin:$PATH"
-   + export PATH="/usr/local/bin:/Users/<your_user_REPLACE_THIS>/.local/bin:$PATH"
+   export BASH_SILENCE_DEPRECATION_WARNING=1
+   - export PATH="$PATH"
+   + export PATH="/Users/<your_user_REPLACE_THIS>/.local/bin:$PATH"
 
    source /usr/local/etc/bash_completion.d/git-completion.bash
-
-   if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
-     __GIT_PROMPT_DIR=$(brew --prefix)/opt/bash-git-prompt/share
-     source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
-   fi
 
    export NVM_DIR="$HOME/.nvm"
    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+   eval "$(starship init bash)"
    ```
 
-**_Confirm:_**
+### Confirm pipenv Troubleshooting
 
-```bash
+```sh
 # 1/2
+
 $ source ~/.bash_profile
 
 # 2/2
+
 $ pipenv --version
 
 # Example Output
+
 pipenv, version 2018.11.26
 ```
 
----
+## Install Postgres
 
-### Install PostgreSQL
+[Source](https://postgresapp.com/)
 
 1. _Run:_
 
-   ```bash
+   ```sh
    # 1/2
+
    $ brew cask install postgres
 
    # 2/2
+
    $ sudo mkdir -p /etc/paths.d && echo /Applications/Postgres.app/Contents/Versions/latest/bin | sudo tee /etc/paths.d/postgresapp
    ```
 
@@ -780,141 +770,131 @@ pipenv, version 2018.11.26
    If this is the first time running Postgres.app, click the "Initialize"
    button. This will create the database and start your local server.
 
-**_Confirm:_**
+### Confirm Postgres
 
-```bash
+```sh
 $ psql
 
 # Example Output
-psql (11.4)
+
+psql (12.0)
 Type "help" for help.
 
-# This opens a new type of prompt in Terminal, type "\q" and then hit Enter to exit
 ```
 
----
+This opens a new type of prompt in Terminal, type `\q` and then hit Enter to
+exit.
 
-### Install MongoDB
+## Install MongoDB
+
+[Source](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/)
 
 _Run:_
 
-```bash
+```sh
 # 1/3
-$ brew install mongodb
+
+$ brew tap mongodb/brew
 
 # 2/3
-$ sudo mkdir -p /data/db
+
+$ brew install mongodb-community@4.2
 
 # 3/3
-$ sudo chown -R $(whoami) /data/db
+
+$ brew services start mongodb-community@4.2
 ```
 
-**_Confirm:_**
-
-1. Open a new Terminal tab with `CMD + T`
-
-2. In this new tab...
-
-   _Run:_
-
-   ```bash
-   $ mongod
-
-   # Example Output
-   # A whooooooole lot of code
-   ```
-
-3. Go back to the original Terminal tab, then...
-
-   _Run:_
-
-   ```bash
-   $ mongo
-
-   # type "exit" and hit Enter
-   ```
-
-4. Go back to the second tab you ran `mongod`, and enter `CTRL + C` to exit the
-   process. You can now close the tab.
-
----
-
-### Install Heroku CLI
+### Confirm MongoDB
 
 _Run:_
 
-```bash
+```sh
+$ ps -ef | grep mongod
+```
+
+## Install Heroku CLI
+
+[Source](https://devcenter.heroku.com/articles/heroku-cli)
+
+_Run:_
+
+```sh
 $ brew tap heroku/brew && brew install heroku
 ```
 
-**_Confirm:_**
+### Confirm Heroku CLI
 
-```bash
+```sh
 $ heroku -v
 
 # Example Output
-heroku/7.27.1 darwin-x64 node-v11.14.0
+
+heroku/7.34.2 darwin-x64 node-v12.13.0
 ```
 
----
-
-### Install Miscellaneous Apps via Homebrew
+## Install Miscellaneous Apps via Homebrew
 
 _Run:_
 
-```bash
+```sh
 # 1/2
+
 $ brew install libpq
 
-# 2/3
+# 2/2
+
 $ brew cask install postman spectacle
 
 # If you do not already have Chrome and/or Slack
+
 $ brew cask install google-chrome slack
 ```
 
-**_Confirm:_**
+### Confirm Misc. Apps
 
-```bash
+```sh
 $ brew leaves
+
 # this will list all of the applications installed via Homebrew
 ```
 
 You can use Spotlight to open the apps installed with `brew cask` by entering
 `CMD + Space` anywhere.
 
----
-
 ### Install Miscellaneous NPM Packages
 
 _Run:_
 
-```bash
+```sh
 $ npm install -g npx nodemon prettier surge trash-cli
 ```
 
-**_Confirm:_**
+### Confirm Misc. NPM Packages
 
-```bash
+```sh
 $ npm list -g --depth=0
 ```
 
----
-
-### Configure Git
+## Configure Git
 
 _Run:_
 
-```bash
+```sh
 # 1/5
+
 # Replace <YOUR FULL NAME> with the name you would like to use, keep the double quotes
+
 $ git config --global user.name "<YOUR_FULL_NAME>"
 
 # 2/5
+
 # Replace <THE_EMAIL...></THE_EMAIL...> with your email, , keep the double quotes
+
 $ git config --global user.email "<THE_EMAIL_YOU_USE_FOR_GITHUB@EMAIL.COM>"
 
 # 3/5
+
 # Copy/paste everything between the parenthesis and hit Enter
 
 $ (git config --global push.default simple
@@ -925,38 +905,42 @@ git config --global color.branch.remote yellow
 git config --global color.status.added green
 git config --global color.status.changed yellow
 git config --global color.status.untracked red
-git config --global core.editor 'subl --wait')
+git config --global core.editor 'subl --wait'
+git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+)
 
 # 4/5
+
 $ curl -sSL https://raw.git.generalassemb.ly/DC-WDI/installfest/master/gitignore-global--template -o ~/.gitignore-global
 
 # 5/5
+
 $ git config --global core.excludesfile ~/.gitignore-global
 ```
 
-**_Confirm:_**
+### Confirm Git Config
 
-```bash
+```sh
 $ git config --list --global
 
 # Example Output
+
 user.name=General Assembly
 user.email=ga@ga.co
 push.default=simple
 color.ui=always
 color.branch.current=green reverse
-color.branch.local=green
+color.branch.local=greenq
 color.branch.remote=yellow
 color.status.added=green
 color.status.changed=yellow
 color.status.untracked=red
 core.editor=subl --wait
 core.excludesfile=/Users/<your_user_REPLACE_THIS>/.gitignore-global
+alias.lg=log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 ```
 
----
-
-### Register for GitHub
+## Register for GitHub
 
 If you don't have a GitHub account, go to https://github.com and create an
 account.
@@ -967,25 +951,19 @@ Make sure you update your profile with:
 - A recognizable profile picture
 - An e-mail address
 
----
-
-### Register for GitHub Enterprise
+## Register for GitHub Enterprise
 
 Go to https://git.generalassemb.ly/ and create an account.
 
 You should use the same name, username, profile image, and email you have used
 before in creating your normal GitHub account.
 
----
-
-### Add GitHub/Enterprise SSH Keys
+## Add GitHub/Enterprise SSH Keys
 
 [Follow these instructions](./git-ssh.md) to add GitHub SSH keys to your local
 machine!
 
----
-
-### Install Useful Chrome Extensions
+## Install Useful Chrome Extensions
 
 - [JSON Viewer](https://chrome.google.com/webstore/detail/json-viewer/gbmdgpbipfallnflgajpaliibnhdgobh)
 - [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)
