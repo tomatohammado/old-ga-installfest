@@ -587,7 +587,7 @@ conflicts.
 3. _Run (in Terminal):_
 
    ```sh
-   source ~/.bash_profile
+   $ source ~/.bash_profile
    ```
 
 ### Confirm
@@ -606,10 +606,10 @@ _Run:_
 
 ```sh
 # 1/3
-$ pyenv install 3.7.4
+$ pyenv install 3.8.0
 
 # 2/3
-$ pyenv global 3.7.4
+$ pyenv global 3.8.0
 
 # 3/3
 $ source ~/.bash_profile
@@ -621,7 +621,8 @@ $ source ~/.bash_profile
 $ python --version
 
 # Example Output
-Python 3.7.4
+
+Python 3.8.0
 ```
 
 While we're here...
