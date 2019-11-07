@@ -109,24 +109,6 @@ $ chsh -s /bin/bash
 
 Close the Terminal completely (`CMD + Q`), then open it again.
 
-## Install Xcode
-
-_Run:_
-
-```sh
-$ xcode-select --install
-```
-
-### Confirm Xcode
-
-```sh
-$ xcode-select --version
-
-# Example Output
-
-xcode-select version 2370.
-```
-
 ## Create .bash_profile
 
 _Run:_
@@ -143,6 +125,24 @@ $ source ~/.bash_profile
 # Example Output
 
 # Nothing! if you do not get any errors that means the .zshrc is in good shape.
+```
+
+## Install Xcode
+
+_Run:_
+
+```sh
+$ xcode-select --install
+```
+
+### Confirm Xcode
+
+```sh
+$ xcode-select --version
+
+# Example Output
+
+xcode-select version 2370.
 ```
 
 ## Install Homebrew
@@ -340,7 +340,7 @@ Add the following line to the very top of the `.bash_profile` and then save
 export PATH="$PATH"
 ```
 
-_Updates `.bash_profile`:_
+_Updated `.bash_profile`:_
 
 ```diff
 export BASH_SILENCE_DEPRECATION_WARNING=1
@@ -384,45 +384,15 @@ export PATH="$PATH"
 $ source ~/.bash_profile
 ```
 
-## Install bash-git-prompt
+## Install Starship prompt
 
-1. Install bash-git-prompt.
+[Source](brew install starship)
 
-   _Run:_
+```sh
+$ brew install starship
+```
 
-   ```sh
-   $ brew install bash-git-prompt
-   ```
-
-2. Add the following near the bottom of the `.bash_profile` and save the file
-   (`CMD + S`).
-
-   _Update `.bash_profile`:_
-
-   ```sh
-   if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
-     __GIT_PROMPT_DIR=$(brew --prefix)/opt/bash-git-prompt/share
-     source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
-   fi
-
-   ```
-
-   _New Changes:_
-
-   ```diff
-   # In .bash_profile
-   export BASH_SILENCE_DEPRECATION_WARNING=1
-   export PATH="$PATH"
-
-   source /usr/local/etc/bash_completion.d/git-completion.bash
-
-   + if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
-   +   __GIT_PROMPT_DIR=$(brew --prefix)/opt/bash-git-prompt/share
-   +   source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
-   + fi
-   ```
-
-**_Confirm:_**
+### Confirm Starship prompt
 
 ```sh
 $ source ~/.bash_profile
