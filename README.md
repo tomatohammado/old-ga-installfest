@@ -590,7 +590,7 @@ conflicts.
    $ source ~/.bash_profile
    ```
 
-### Confirm
+### Confirm pyenv
 
 ```sh
 $ pyenv --version
@@ -615,7 +615,7 @@ $ pyenv global 3.8.0
 $ source ~/.bash_profile
 ```
 
-**_Confirm:_**
+### Confirm python
 
 ```sh
 $ python --version
@@ -625,19 +625,25 @@ $ python --version
 Python 3.8.0
 ```
 
+#### Troubleshooting
+
+Refer the the [pyenv wiki](https://github.com/pyenv/pyenv/wiki)
+
+## Update pip
+
+_Run:_
+
+```sh
+$ pip install --upgrade pip
+```
+
 While we're here...
 
 ```sh
 $ pip install ipython
 ```
 
-#### Troubleshooting
-
-Refer the the [pyenv wiki](https://github.com/pyenv/pyenv/wiki)
-
----
-
-### Install Pipenv
+## Install Pipenv
 
 _Run:_
 
@@ -645,48 +651,24 @@ _Run:_
 $ pip install --user pipenv
 ```
 
-**_Confirm:_**
+### Confirm pipenv
 
 ```sh
-# Confirm
 $ pipenv --version
 
 # Example Output – Success
+
 pipenv, version 2018.11.26
 
 # Example Output – More work needed
+
 -bash: pipenv: command not found
 ```
 
-#### Troubleshooting
+#### Troubleshooting pipenv
 
 If pipenv cannot be found, we need to make one change to the `.bash_profile` so
 the Terminal can find the application.
-
-The change will look something like...
-
-```diff
-# In .bash_profile
-export BASH_SILENCE_DEPRECATION_WARNING=1
-- export PATH="$PATH"
-+ export PATH="/Users/<your_user_REPLACE_THIS>/.local/bin:$PATH"
-
-source /usr/local/etc/bash_completion.d/git-completion.bash
-
-if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
-  __GIT_PROMPT_DIR=$(brew --prefix)/opt/bash-git-prompt/share
-  source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
-fi
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
-
-```
 
 How do we determine what to change the line to?
 
@@ -736,18 +718,14 @@ How do we determine what to change the line to?
 
    source /usr/local/etc/bash_completion.d/git-completion.bash
 
-   if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
-     __GIT_PROMPT_DIR=$(brew --prefix)/opt/bash-git-prompt/share
-     source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
-   fi
-
    export NVM_DIR="$HOME/.nvm"
    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+   eval "$(starship init bash)"
    ```
 
-**_Confirm:_**
+### Confirm pipenv Troubleshooting
 
 ```sh
 # 1/2
@@ -757,6 +735,7 @@ $ source ~/.bash_profile
 $ pipenv --version
 
 # Example Output
+
 pipenv, version 2018.11.26
 ```
 
