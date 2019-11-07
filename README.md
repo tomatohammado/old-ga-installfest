@@ -87,8 +87,6 @@ For our class, you'll need the latest release of
 
 Starting Installfest with the most recent macOS update is vital!
 
----
-
 ## Open Terminal
 
 1. Open Spotlight by clicking the little magnifying glass in the top-right
@@ -96,8 +94,6 @@ Starting Installfest with the most recent macOS update is vital!
 
 2. Type "Terminal" into the Spotlight text input and select the Terminal app. A
    new Terminal window should pop up.
-
----
 
 ## Switch to bash
 
@@ -127,8 +123,6 @@ $ xcode-select --version
 # Example Output
 xcode-select version 2370.
 ```
-
----
 
 ## Create .bash_profile
 
