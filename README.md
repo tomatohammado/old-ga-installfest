@@ -149,36 +149,36 @@ xcode-select version 2370.
 
 1. Check to see if you have Homebrew installed.
 
-   _Run:_
+_Run:_
 
-   ```sh
-   $ brew --version
+```sh
+$ brew --version
 
-   # Example Output – Homebrew installed
+# Example Output – Homebrew installed
 
-   Homebrew 2.1.9
-   Homebrew/homebrew-core (git revision 9e49; last commit 2019-07-30)
+Homebrew 2.1.9
+Homebrew/homebrew-core (git revision 9e49; last commit 2019-07-30)
 
-   # Example Output – Homebrew not installed
+# Example Output – Homebrew not installed
 
-   -bash: brew: command not found
-   ```
+-bash: brew: command not found
+```
 
 2. If Homebrew is installed, update it.
 
-   _Run:_
+_Run:_
 
-   ```sh
-   $ brew update; brew upgrade; brew cleanup; brew doctor
-   ```
+```sh
+$ brew update; brew upgrade; brew cleanup; brew doctor
+```
 
-   If not, [install Homebrew](https://brew.sh/).
+If not, [install Homebrew](https://brew.sh/).
 
-   _Run:_
+_Run:_
 
-   ```sh
-   $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-   ```
+```sh
+$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
 
 ### Confirm Homebrew
 
