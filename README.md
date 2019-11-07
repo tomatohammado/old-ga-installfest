@@ -75,8 +75,8 @@ students to have them.
 ### If You Run Into an Issue
 
 1. First, verify that you've typed the given commands **letter for letter**.
-1. Then, check the board if any changes were made during the installfest.
-1. Finally, ask an instructor for help.
+2. Then, check the board if any changes were made during the installfest.
+3. Finally, ask an instructor for help.
 
 # Instructions 🚀
 
@@ -123,6 +123,7 @@ $ xcode-select --install
 $ xcode-select --version
 
 # Example Output
+
 xcode-select version 2370.
 ```
 
@@ -140,12 +141,11 @@ $ touch ~/.bash_profile
 $ source ~/.bash_profile
 
 # Example Output
+
 # Nothing! if you do not get any errors that means the .zshrc is in good shape.
 ```
 
----
-
-### Install Homebrew
+## Install Homebrew
 
 1. Check to see if you have Homebrew installed.
 
@@ -155,10 +155,12 @@ $ source ~/.bash_profile
    $ brew --version
 
    # Example Output – Homebrew installed
+
    Homebrew 2.1.9
    Homebrew/homebrew-core (git revision 9e49; last commit 2019-07-30)
 
    # Example Output – Homebrew not installed
+
    -bash: brew: command not found
    ```
 
@@ -184,11 +186,10 @@ $ source ~/.bash_profile
 $ brew --version
 
 # Example Output
+
 Homebrew 2.1.16
 Homebrew/homebrew-core (git revision 2d19; last commit 2019-11-06)
 ```
-
----
 
 ### (Re)install Git
 
@@ -200,10 +201,11 @@ Homebrew/homebrew-core (git revision 2d19; last commit 2019-11-06)
    $ git --version
 
    # Example Output
+
    git version 2.20.1 (Apple Git-122)
    ```
 
-1. Install latest version of git.
+2. Install latest version of git.
 
    _Run:_
 
@@ -211,16 +213,17 @@ Homebrew/homebrew-core (git revision 2d19; last commit 2019-11-06)
    $ brew install git
    ```
 
+3. Completely close Terminal (`CMD + Q`) and open a new window with Spotlight.
+
 ### Confirm Git
 
-Completely close Terminal (`CMD + Q`) and open a new window with Spotlight.
-
-Then run:
+_Run:_
 
 ```sh
 $ git --version
 
 # Example Output
+
 git version 2.24.0
 # It's different!
 ```
@@ -236,19 +239,17 @@ _Run:_
 $ brew link git
 
 # If you get an error message, try:
+
 $ brew link --overwrite git
 ```
 
 After that, try the Confirm step. If that doesn't work, completely close
 Terminal (`CMD + Q`) and open a new window.
 
----
-
 ### Install Code Editors
 
 We will be using Sublime Text during Installfest, and recommend using it for the
-first few weeks before we move up to a more complex but powerful editor, VS
-Code.
+first few weeks before trying out the more complex but powerful editor: VS Code.
 
 _Run:_
 
@@ -259,18 +260,19 @@ $ brew cask install sublime-text visual-studio-code
 ### Confirm Code Editors
 
 ```sh
-# 1.2
+# 1/2
 $ subl ~/.bash_profile
 
 # Keep this window open
 
 # 2/2
 $ code ~/.bash_profile
-
-# Close VS Code completely
 ```
 
-#### Troubleshooting Sublime
+You can either use VS Code or Sublime Text to edit your `.bash_profile`. Keep
+either window open.
+
+#### Troubleshooting Sublime Text
 
 If Sublime Text is installed but `subl ~/.bash_profile` does not work...
 
@@ -308,8 +310,6 @@ If VS Code is installed but `code ~/.bash_profile` does not work...
 4. Run the "Confirm" command again. Worst case, completely close Terminal
    (`CMD + Q`) and open a new window.
 
----
-
 ## Remove warning about zsh being default shell
 
 In the `.bash_profile` file open in your editor (Sublime or VS Code), add this
@@ -325,8 +325,6 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 # In the Terminal
 $ source ~/.bash_profile
 ```
-
---
 
 ### Set the \$PATH
 
