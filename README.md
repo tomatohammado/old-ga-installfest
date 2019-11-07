@@ -130,7 +130,7 @@ xcode-select version 2370.
 
 ---
 
-## Create .bash_profile file
+## Create .bash_profile
 
 _Run:_
 
@@ -215,7 +215,7 @@ Homebrew/homebrew-core (git revision 2d19; last commit 2019-11-06)
    $ brew install git
    ```
 
-### Confirm
+### Confirm Git
 
 Completely close Terminal (`CMD + Q`) and open a new window with Spotlight.
 
@@ -260,7 +260,7 @@ _Run:_
 $ brew cask install sublime-text visual-studio-code
 ```
 
-**_Confirm:_**
+### Confirm Code Editors
 
 ```sh
 # 1.2
