@@ -887,7 +887,9 @@ git config --global color.branch.remote yellow
 git config --global color.status.added green
 git config --global color.status.changed yellow
 git config --global color.status.untracked red
-git config --global core.editor 'subl --wait')
+git config --global core.editor 'subl --wait'
+git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+)
 
 # 4/5
 $ curl -sSL https://raw.git.generalassemb.ly/DC-WDI/installfest/master/gitignore-global--template -o ~/.gitignore-global
