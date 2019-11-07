@@ -384,74 +384,7 @@ export PATH="$PATH"
 $ source ~/.bash_profile
 ```
 
-## Install Starship prompt
-
-[Source](https://github.com/starship/starship)
-
-1. Install Starship.
-
-   ```sh
-   $ brew install starship
-   ```
-
-2. Add to `.bash_profile`.
-
-   ```sh
-   eval "$(starship init bash)"
-   ```
-
-   **Note:** We want to add this line and keep it
-   [near the end of `~/.bash_profile`](https://github.com/starship/starship#bash)
-
-   _Updated `.bash_profile`:_
-
-   ```diff
-   export BASH_SILENCE_DEPRECATION_WARNING=1
-   export PATH="$PATH"
-
-   source /usr/local/etc/bash_completion.d/git-completion.bash
-
-   + eval "$(starship init bash)"
-   ```
-
-### Confirm Starship prompt
-
-```sh
-$ source ~/.bash_profile
-```
-
-Terminal should look a little different now!
-
-If not, completely close Terminal (`CMD + Q`) and reopen a new window.
-
-### Download Fira Code
-
-Spaceship Prompt uses some new characters, so we need to download and configure
-a programming font for our Terminal!
-
-1. Download
-   [Fira Code here](https://github.com/tonsky/FiraCode/releases/download/2/FiraCode_2.zip).
-
-2. Unzip the folder when it is finishe downloading, and open the `tff/` folder.
-
-3. Highlight all of the `.tff` files, and the double click them to open the
-   prompt to add them to the Font Book app.
-
-   Once they are installed, you should see them on the list after a few seconds.
-
-4. In the Terminal App, open the Preferences with `CMD + ,`
-
-5. Go to the "Profiles" tab.
-
-6. Under "Font", click the "Change" button and select Fira Code from the list.
-
-7. Under "Text", click the box for "Antialias text"
-
-### Confirm Fira Code
-
-The font in your terminal should be different!
-
-### Uninstall Node (if installed)
+## Uninstall Node (if installed)
 
 _Run:_
 
@@ -494,11 +427,6 @@ export PATH="$PATH"
 
 source /usr/local/etc/bash_completion.d/git-completion.bash
 
-if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
-  __GIT_PROMPT_DIR=$(brew --prefix)/opt/bash-git-prompt/share
-  source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
-fi
-
 # There might not be an empty line between the previous code and these new lines, feel free to add it in!
 + export NVM_DIR="$HOME/.nvm"
 + [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -514,8 +442,6 @@ $ command -v nvm
 # Example Output
 nvm
 ```
-
----
 
 ### Install Node
 
@@ -541,7 +467,76 @@ $ npm --version
 v6.10.0
 ```
 
----
+## Install Starship prompt
+
+[Source](https://github.com/starship/starship)
+
+1. Install Starship.
+
+   ```sh
+   $ brew install starship
+   ```
+
+2. Add to `.bash_profile`.
+
+   ```sh
+   eval "$(starship init bash)"
+   ```
+
+   **Note:** We want to add this line and keep it
+   [near the end of `~/.bash_profile`](https://github.com/starship/starship#bash)
+
+   _Updated `.bash_profile`:_
+
+   ```diff
+   export BASH_SILENCE_DEPRECATION_WARNING=1
+   export PATH="$PATH"
+
+   source /usr/local/etc/bash_completion.d/git-completion.bash
+
+   export NVM_DIR="$HOME/.nvm"
+   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+   + eval "$(starship init bash)"
+   ```
+
+### Confirm Starship prompt
+
+```sh
+$ source ~/.bash_profile
+```
+
+Terminal should look a little different now!
+
+If not, completely close Terminal (`CMD + Q`) and reopen a new window.
+
+## Download Fira Code
+
+Spaceship Prompt uses some new characters, so we need to download and configure
+a programming font for our Terminal!
+
+1. Download
+   [Fira Code here](https://github.com/tonsky/FiraCode/releases/download/2/FiraCode_2.zip).
+
+2. Unzip the folder when it is finishe downloading, and open the `tff/` folder.
+
+3. Highlight all of the `.tff` files, and the double click them to open the
+   prompt to add them to the Font Book app.
+
+   Once they are installed, you should see them on the list after a few seconds.
+
+4. In the Terminal App, open the Preferences with `CMD + ,`
+
+5. Go to the "Profiles" tab.
+
+6. Under "Font", click the "Change" button and select Fira Code from the list.
+
+7. Under "Text", click the box for "Antialias text"
+
+### Confirm Fira Code
+
+The font in your terminal should be different!
 
 ### Install Pyenv
 
