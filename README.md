@@ -766,15 +766,15 @@ pipenv, version 2018.11.26
 $ psql
 
 # Example Output
-psql (11.4)
+psql (12.0)
 Type "help" for help.
 
-# This opens a new type of prompt in Terminal, type "\q" and then hit Enter to exit
 ```
 
----
+This opens a new type of prompt in Terminal, type `\q` and then hit Enter to
+exit.
 
-### Install MongoDB
+## Install MongoDB
 
 [Source](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/)
 
@@ -799,7 +799,7 @@ _Run:_
 $ ps -ef | grep mongod
 ```
 
-### Install Heroku CLI
+## Install Heroku CLI
 
 [Source](https://devcenter.heroku.com/articles/heroku-cli)
 
@@ -815,12 +815,11 @@ $ brew tap heroku/brew && brew install heroku
 $ heroku -v
 
 # Example Output
-heroku/7.27.1 darwin-x64 node-v11.14.0
+
+heroku/7.34.2 darwin-x64 node-v12.13.0
 ```
 
----
-
-### Install Miscellaneous Apps via Homebrew
+## Install Miscellaneous Apps via Homebrew
 
 _Run:_
 
@@ -832,10 +831,11 @@ $ brew install libpq
 $ brew cask install postman spectacle
 
 # If you do not already have Chrome and/or Slack
+
 $ brew cask install google-chrome slack
 ```
 
-**_Confirm:_**
+### Confirm
 
 ```sh
 $ brew leaves
