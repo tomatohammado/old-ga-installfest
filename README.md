@@ -191,7 +191,7 @@ Homebrew 2.1.16
 Homebrew/homebrew-core (git revision 2d19; last commit 2019-11-06)
 ```
 
-### (Re)install Git
+## (Re)install Git
 
 1. See initial version of git installed on the system.
 
@@ -246,7 +246,7 @@ $ brew link --overwrite git
 After that, try the Confirm step. If that doesn't work, completely close
 Terminal (`CMD + Q`) and open a new window.
 
-### Install Code Editors
+## Install Code Editors
 
 We will be using Sublime Text during Installfest, and recommend using it for the
 first few weeks before trying out the more complex but powerful editor: VS Code.
@@ -310,7 +310,7 @@ If VS Code is installed but `code ~/.bash_profile` does not work...
 4. Run the "Confirm" command again. Worst case, completely close Terminal
    (`CMD + Q`) and open a new window.
 
-## Remove warning about zsh being default shell
+## Remove bash warning
 
 In the `.bash_profile` file open in your editor (Sublime or VS Code), add this
 line to the top:
@@ -319,14 +319,19 @@ line to the top:
 export BASH_SILENCE_DEPRECATION_WARNING=1
 ```
 
-## Confirm remove zsh warning
+### Confirm Remove bash warning
 
 ```sh
 # In the Terminal
 $ source ~/.bash_profile
 ```
 
-### Set the \$PATH
+**Note:** Installfest provides an
+[example `.bash_profile`](./bash_profile_example.sh) with all of additions we'll
+be making. It might be helpful to open it in a new browser tab to refer to
+alongside the instructions.
+
+## Set the \$PATH
 
 Add the following line to the very top of the `.bash_profile` and then save
 (`CMD + S`).
@@ -348,7 +353,7 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 sure there is a line that says `export PATH="<blah blah blah>"` because we will
 need to add to it later.
 
-### Confirm add \$PATH
+### Confirm \$PATH
 
 ```sh
 $ source ~/.bash_profile
@@ -360,17 +365,11 @@ $ source ~/.bash_profile
 
 In your `.bash_profile`, add this line and save the file (`CMD + S`).
 
-This can go right after the `export PATH` line from the previous step.
-
-_Update `.bash_profile`:_
-
 ```sh
 source /usr/local/etc/bash_completion.d/git-completion.bash
 ```
 
-Your `.bash_profile` should look something like this:
-
-_Updated .bash_profile:_
+_Updated `.bash_profile`:_
 
 ```diff
 export BASH_SILENCE_DEPRECATION_WARNING=1
@@ -379,20 +378,13 @@ export PATH="$PATH"
 + source /usr/local/etc/bash_completion.d/git-completion.bash
 ```
 
-**Note:** Installfest provides an
-[example `.bash_profile`](./bash_profile_example.sh) with all of additions we'll
-be making. It might be helpful to open it in a new browser tab to refer to
-alongside the instructions.
-
-**_Confirm:_**
+### Confirm Git Auto-Completion
 
 ```sh
 $ source ~/.bash_profile
 ```
 
----
-
-### Install bash-git-prompt
+## Install bash-git-prompt
 
 1. Install bash-git-prompt.
 

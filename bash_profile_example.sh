@@ -1,4 +1,6 @@
-export PATH="/usr/local/bin:/Users/generalassembly/.local/bin:$PATH"
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
+export PATH="/Users/generalassembly/.local/bin:$PATH"
 
 source /usr/local/etc/bash_completion.d/git-completion.bash
 
