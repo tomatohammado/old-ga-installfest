@@ -100,6 +100,8 @@ Starting Installfest with the most recent macOS update is vital!
 _Run:_
 
 ```sh
+# Remember: the "$" is the start of the Terminal prompt!
+
 $ chsh -s /bin/bash
 ```
 
