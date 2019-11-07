@@ -542,7 +542,9 @@ a programming font for our Terminal!
 
 The font in your terminal should be different!
 
-### Install Pyenv
+## Install Pyenv
+
+[Source](https://github.com/pyenv/pyenv#installation)
 
 **Note:** Save (`CMD + S`) your `.bash_profile` before starting this step – it
 will update the `.bash_profile` so we need to save the file first to avoid file
@@ -551,7 +553,6 @@ conflicts.
 1. _Run:_
 
    ```sh
-   # 1/3
    $ brew install pyenv
    ```
 
@@ -589,19 +590,17 @@ conflicts.
    source ~/.bash_profile
    ```
 
-**_Confirm:_**
+### Confirm
 
 ```sh
-# Confirm
 $ pyenv --version
 
 # Example Output
-pyenv 1.2.13
+
+pyenv 1.2.15
 ```
 
----
-
-### Install Python
+## Install Python
 
 _Run:_
 
