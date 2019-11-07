@@ -424,7 +424,32 @@ Terminal should look a little different now!
 
 If not, completely close Terminal (`CMD + Q`) and reopen a new window.
 
----
+### Download Fira Code
+
+Spaceship Prompt uses some new characters, so we need to download and configure
+a programming font for our Terminal!
+
+1. Download
+   [Fira Code here](https://github.com/tonsky/FiraCode/releases/download/2/FiraCode_2.zip).
+
+2. Unzip the folder when it is finishe downloading, and open the `tff/` folder.
+
+3. Highlight all of the `.tff` files, and the double click them to open the
+   prompt to add them to the Font Book app.
+
+   Once they are installed, you should see them on the list after a few seconds.
+
+4. In the Terminal App, open the Preferences with `CMD + ,`
+
+5. Go to the "Profiles" tab.
+
+6. Under "Font", click the "Change" button and select Fira Code from the list.
+
+7. Under "Text", click the box for "Antialias text"
+
+### Confirm Fira Code
+
+The font in your terminal should be different!
 
 ### Uninstall Node (if installed)
 
