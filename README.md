@@ -225,7 +225,6 @@ $ git --version
 # Example Output
 
 git version 2.24.0
-# It's different!
 ```
 
 #### Troubleshooting
@@ -261,11 +260,13 @@ $ brew cask install sublime-text visual-studio-code
 
 ```sh
 # 1/2
+
 $ subl ~/.bash_profile
 
 # Keep this window open
 
 # 2/2
+
 $ code ~/.bash_profile
 ```
 
@@ -347,6 +348,7 @@ _Updated `.bash_profile`:_
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # The "+" is just to show the added line, it is not a part of the final code.
+
 + export PATH="$PATH"
 ```
 
@@ -410,9 +412,11 @@ _Run:_
 
 ```sh
 # 1/2
+
 $ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
 
 # 2/2
+
 $ source ~/.bash_profile
 ```
 
@@ -453,6 +457,7 @@ $ nvm install node
 
 ```sh
 # 1/2
+
 $ node --version
 
 # Example Output
@@ -460,6 +465,7 @@ $ node --version
 v13.1.0
 
 # 2/2
+
 $ npm --version
 
 # Example Output
@@ -602,12 +608,15 @@ _Run:_
 
 ```sh
 # 1/3
+
 $ pyenv install 3.8.0
 
 # 2/3
+
 $ pyenv global 3.8.0
 
 # 3/3
+
 $ source ~/.bash_profile
 ```
 
@@ -680,6 +689,7 @@ How do we determine what to change the line to?
 
    ```sh
    /Users/<your_user_REPLACE_THIS>/.local
+
    # Yours will be different!
    ```
 
@@ -725,9 +735,11 @@ How do we determine what to change the line to?
 
 ```sh
 # 1/2
+
 $ source ~/.bash_profile
 
 # 2/2
+
 $ pipenv --version
 
 # Example Output
@@ -743,9 +755,11 @@ pipenv, version 2018.11.26
 
    ```sh
    # 1/2
+
    $ brew cask install postgres
 
    # 2/2
+
    $ sudo mkdir -p /etc/paths.d && echo /Applications/Postgres.app/Contents/Versions/latest/bin | sudo tee /etc/paths.d/postgresapp
    ```
 
@@ -762,6 +776,7 @@ pipenv, version 2018.11.26
 $ psql
 
 # Example Output
+
 psql (12.0)
 Type "help" for help.
 
@@ -778,12 +793,15 @@ _Run:_
 
 ```sh
 # 1/3
+
 $ brew tap mongodb/brew
 
 # 2/3
+
 $ brew install mongodb-community@4.2
 
 # 3/3
+
 $ brew services start mongodb-community@4.2
 ```
 
@@ -821,9 +839,11 @@ _Run:_
 
 ```sh
 # 1/2
+
 $ brew install libpq
 
-# 2/3
+# 2/2
+
 $ brew cask install postman spectacle
 
 # If you do not already have Chrome and/or Slack
@@ -835,6 +855,7 @@ $ brew cask install google-chrome slack
 
 ```sh
 $ brew leaves
+
 # this will list all of the applications installed via Homebrew
 ```
 
@@ -861,14 +882,17 @@ _Run:_
 
 ```sh
 # 1/5
+
 # Replace <YOUR FULL NAME> with the name you would like to use, keep the double quotes
 $ git config --global user.name "<YOUR_FULL_NAME>"
 
 # 2/5
+
 # Replace <THE_EMAIL...></THE_EMAIL...> with your email, , keep the double quotes
 $ git config --global user.email "<THE_EMAIL_YOU_USE_FOR_GITHUB@EMAIL.COM>"
 
 # 3/5
+
 # Copy/paste everything between the parenthesis and hit Enter
 
 $ (git config --global push.default simple
@@ -884,9 +908,11 @@ git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Crese
 )
 
 # 4/5
+
 $ curl -sSL https://raw.git.generalassemb.ly/DC-WDI/installfest/master/gitignore-global--template -o ~/.gitignore-global
 
 # 5/5
+
 $ git config --global core.excludesfile ~/.gitignore-global
 ```
 
