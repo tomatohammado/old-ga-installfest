@@ -835,7 +835,7 @@ $ brew cask install postman spectacle
 $ brew cask install google-chrome slack
 ```
 
-### Confirm
+### Confirm Misc. Apps
 
 ```sh
 $ brew leaves
@@ -855,7 +855,7 @@ _Run:_
 $ npm install -g npx nodemon prettier surge trash-cli
 ```
 
-**_Confirm:_**
+### Confirm Misc. NPM Packages
 
 ```sh
 $ npm list -g --depth=0
@@ -898,29 +898,29 @@ $ curl -sSL https://raw.git.generalassemb.ly/DC-WDI/installfest/master/gitignore
 $ git config --global core.excludesfile ~/.gitignore-global
 ```
 
-**_Confirm:_**
+### Confirm Git Config
 
 ```sh
 $ git config --list --global
 
 # Example Output
+
 user.name=General Assembly
 user.email=ga@ga.co
 push.default=simple
 color.ui=always
 color.branch.current=green reverse
-color.branch.local=green
+color.branch.local=greenq
 color.branch.remote=yellow
 color.status.added=green
 color.status.changed=yellow
 color.status.untracked=red
 core.editor=subl --wait
 core.excludesfile=/Users/<your_user_REPLACE_THIS>/.gitignore-global
+alias.lg=log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 ```
 
----
-
-### Register for GitHub
+## Register for GitHub
 
 If you don't have a GitHub account, go to https://github.com and create an
 account.
@@ -931,25 +931,19 @@ Make sure you update your profile with:
 - A recognizable profile picture
 - An e-mail address
 
----
-
-### Register for GitHub Enterprise
+## Register for GitHub Enterprise
 
 Go to https://git.generalassemb.ly/ and create an account.
 
 You should use the same name, username, profile image, and email you have used
 before in creating your normal GitHub account.
 
----
-
-### Add GitHub/Enterprise SSH Keys
+## Add GitHub/Enterprise SSH Keys
 
 [Follow these instructions](./git-ssh.md) to add GitHub SSH keys to your local
 machine!
 
----
-
-### Install Useful Chrome Extensions
+## Install Useful Chrome Extensions
 
 - [JSON Viewer](https://chrome.google.com/webstore/detail/json-viewer/gbmdgpbipfallnflgajpaliibnhdgobh)
 - [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)

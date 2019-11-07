@@ -1,8 +1,8 @@
 # Generating SSH Keys and Linking with Github
 
-## Instructions
+# Instructions
 
-### Check for Existing Keys
+## Check for Existing Keys
 
 In Terminal...
 
@@ -12,6 +12,7 @@ _Run:_
 $ ls -al ~/.ssh
 
 # Example Output – No existing keys
+
 ls: /Users/generalassembly/.ssh: No such file or directory
 ```
 
@@ -23,9 +24,7 @@ If the directory does exist, you likely already have keys (such as `id_rsa` and
 SSH-Agent" step and use those keys but you can also generate new SSH keys if you
 like.
 
----
-
-### Generate a New SSH Key
+## Generate a New SSH Key
 
 _Run:_
 
@@ -40,6 +39,7 @@ Enter passphrase (empty for no passphrase):
 Enter same passphrase again:
 
 # Example Output
+
 Your identification has been saved in /Users/generalassembly/.ssh/id_rsa.
 Your public key has been saved in /Users/generalassembly/.ssh/id_rsa.pub.
 The key fingerprint is:
@@ -59,9 +59,7 @@ The key's randomart image is:
 
 ```
 
----
-
-### Add Your Key to the SSH-Agent
+## Add Your Key to the SSH-Agent
 
 _Run:_
 
@@ -70,23 +68,22 @@ _Run:_
 $ eval "$(ssh-agent -s)"
 
 # Example Output
+
 Agent pid 30609
 
 # 2/2
 $ ssh-add ~/.ssh/id_rsa
 
 # Example Output
-Identity added: /Users/generalassembly/.ssh/id_rsa (ga@ga.co)
 
+Identity added: /Users/generalassembly/.ssh/id_rsa (ga@ga.co)
 ```
 
 **Note:** If you didn't generate a new SSH key in Step 1, and used an existing
 SSH key instead, you will need to replace `id_rsa` in the above command with the
 name of your existing private key file.
 
----
-
-### Add Your SSH Key to your Github Accounts
+## Add Your SSH Key to your Github Accounts
 
 1. Copy the SSH key to your clipboard with...
 
@@ -120,9 +117,7 @@ name of your existing private key file.
 
 **Repeat the 8 commands above on git.generalassemb.ly.**
 
----
-
-### Checking your Connection
+## Checking your Connection
 
 _Run:_
 
@@ -131,6 +126,7 @@ _Run:_
 $ ssh -T git@github.com
 
 # Example Output
+
 The authenticity of host 'github.com (192.30.253.113)' can't be established.
 RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
 Are you sure you want to continue connecting (yes/no)? y
@@ -141,19 +137,18 @@ Hi generalassembly! You've successfully authenticated, but GitHub does not provi
 
 # 2/2 Github Enterprise
 $ ssh -T git@git.generalassemb.ly
-
 ```
 
 You may be asked to authenticate this action using your password, which is the
 SSH key passphrase you created earlier.
 
-#### Troubleshooting
+### Troubleshooting
 
 If you receive a message about "access denied," please notify an instructor or
 you can
 [read these instructions for diagnosing the issue](https://help.github.com/articles/error-permission-denied-publickey/)
 
-## Closing
+# Closing
 
 Go over learning objectives, and make sure your profiles are up to date.
 
