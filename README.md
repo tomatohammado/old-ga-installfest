@@ -386,11 +386,33 @@ $ source ~/.bash_profile
 
 ## Install Starship prompt
 
-[Source](brew install starship)
+[Source](https://github.com/starship/starship)
 
-```sh
-$ brew install starship
-```
+1. Install Starship.
+
+   ```sh
+   $ brew install starship
+   ```
+
+2. Add to `.bash_profile`.
+
+   ```sh
+   eval "$(starship init bash)"
+   ```
+
+   **Note:** We want to add this line and keep it
+   [near the end of `~/.bash_profile`](https://github.com/starship/starship#bash)
+
+   _Updated `.bash_profile`:_
+
+   ```diff
+   export BASH_SILENCE_DEPRECATION_WARNING=1
+   export PATH="$PATH"
+
+   source /usr/local/etc/bash_completion.d/git-completion.bash
+
+   + eval "$(starship init bash)"
+   ```
 
 ### Confirm Starship prompt
 
