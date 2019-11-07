@@ -884,11 +884,13 @@ _Run:_
 # 1/5
 
 # Replace <YOUR FULL NAME> with the name you would like to use, keep the double quotes
+
 $ git config --global user.name "<YOUR_FULL_NAME>"
 
 # 2/5
 
 # Replace <THE_EMAIL...></THE_EMAIL...> with your email, , keep the double quotes
+
 $ git config --global user.email "<THE_EMAIL_YOU_USE_FOR_GITHUB@EMAIL.COM>"
 
 # 3/5
