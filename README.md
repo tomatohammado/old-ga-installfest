@@ -969,6 +969,14 @@ machine!
 - [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)
 - [Redux DevTools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd)
 
+## Complete Final Course Prep Form
+
+The link
+[can be found here](https://docs.google.com/forms/d/e/1FAIpQLScvSiLlPbm8U2bhcQAlKe5tsOWdw-rcRW7O4VzP6gmwMBWKWw/viewform)
+
+Please fill it out so we can add you to the resources for lessons and
+assignments!
+
 # Congratulations 🎉
 
 You have installed the basic applications to use as a developer, and you are
